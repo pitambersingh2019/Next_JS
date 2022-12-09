@@ -1,0 +1,9 @@
+@import '_styles/mixins/breakpoints';
+
+.root {
+  > div > section {
+    @include all() {
+      padding-top: 1rem;
+    }
+  }
+}

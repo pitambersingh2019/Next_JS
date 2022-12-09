@@ -1,0 +1,213 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/animation';
+@import '_styles/mixins/interaction';
+@import '_styles/mixins/type';
+
+.root {
+  position: relative;
+  z-index: 10;
+  background-color: var(--card-colour);
+  @include shadow();
+
+  @media print {
+    display: none;
+  }
+
+  li,
+  > span {
+    background-color: var(--card-colour);
+    justify-content: flex-start;
+    padding: 1.7rem var(--gutter);
+  }
+
+  > span {
+    @include flex();
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+}
+
+.link {
+  @include weight-medium();
+  @include link-underline('transparent', 'white', 'blue-light', 0rem, calc(100% - 2.9rem), 2.9rem);
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 0.2rem;
+  white-space: pre;
+
+  @include portrait() {
+    @include link-underline('transparent', 'white', 'blue-light', 0rem, 100%, 0, 0.3rem);
+    display: inline-flex;
+    padding: 2rem 0;
+    color: var(--grey-dark);
+    transition: background-size 0.075s ease-out, color 0.3s ease;
+    will-change: background-size, color;
+
+    svg {
+      fill: var(--grey-dark);
+      transition: fill 0.3s ease;
+      will-change: fill;
+    }
+
+    &:hover {
+      color: var(--white);
+      transition-duration: 0.05s;
+
+      svg {
+        fill: var(--white);
+        transition-duration: 0.05s;
+      }
+    }
+  }
+
+  @include landscape() {
+    padding: 2.5rem 0;
+  }
+
+  @include desktop() {
+    @include link-underline('transparent', 'white', 'blue-light', 0rem, calc(100% - 2.9rem), 2.9rem);
+    display: inline-flex;
+    padding: 0.2rem 0;
+    position: unset;
+  }
+
+  svg {
+    flex-shrink: 0;
+  }
+
+  > span svg {
+    fill: var(--white);
+  }
+}
+
+.active {
+  @include portrait() {
+    @include link-underline-colours('blue-light', 'white', 'blue');
+    color: var(--white);
+
+    svg {
+      fill: var(--white);
+    }
+  }
+
+  @include desktop() {
+    @include link-underline-colours('transparent', 'white', 'blue-light');
+    @include after();
+
+    &:after {
+      height: 3rem;
+      right: 0;
+      @include central-y();
+      border-bottom: 0;
+      border-right: 0.3rem solid var(--blue-light);
+    }
+  }
+}
+
+.hidden,
+.current {
+  @include portrait() {
+    display: none;
+  }
+}
+
+.current {
+  position: relative;
+
+  button:before {
+    width: 200vw;
+    height: 200vh;
+    @include central();
+  }
+
+  > svg {
+    stroke: var(--white);
+    width: 1rem;
+    margin-left: auto;
+    transition: transform 0.3s ease-out;
+    @include w-c-t();
+  }
+}
+
+.visible {
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  ul {
+    @include flex();
+    padding-left: 2rem;
+
+    li {
+      padding: 0 2rem;
+
+      &:last-of-type {
+        @include flex();
+
+        &:after {
+          content: '';
+          display: block;
+          width: 2rem;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  @include below-portrait() {
+    display: none;
+  }
+
+  @include landscape() {
+    ul {
+      padding-left: 2.5rem;
+
+      li {
+        padding: 0 2.5rem;
+
+        &:last-of-type:after {
+          width: 2.5rem;
+        }
+      }
+    }
+  }
+
+  @include desktop() {
+    ul {
+      min-width: 25rem;
+      padding: 3.5rem 0;
+      flex-direction: column;
+      align-items: flex-start;
+
+      li {
+        position: relative;
+        padding: 2rem 6rem;
+        width: 100%;
+
+        &:before,
+        &:after {
+          content: none;
+        }
+      }
+    }
+  }
+}
+
+.expanded {
+  z-index: 11;
+  @include before();
+
+  &:before {
+    @include modal-default();
+  }
+
+  button + svg {
+    transform: rotate(180deg);
+  }
+}

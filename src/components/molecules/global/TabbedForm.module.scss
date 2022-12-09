@@ -1,0 +1,13 @@
+.root {
+  position: relative;
+  width: 100%;
+
+  > div {
+    width: 100%;
+
+    > aside,
+    > form {
+      width: 100%;
+    }
+  }
+}

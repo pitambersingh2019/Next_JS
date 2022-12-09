@@ -1,0 +1,52 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+
+.root {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin: -1.2rem -1.5rem 0 auto;
+  padding-left: 2rem;
+  position: absolute;
+  right: 4rem;
+  z-index: 5;
+
+  @include portrait() {
+    margin: -2rem -2rem 0 0;
+  }
+
+  @include landscape() {
+    margin: -1.5rem -3rem 0 0;
+  }
+
+  small {
+    margin-right: 4rem;
+    color: var(--white);
+    display: none;
+
+    @media screen and (min-width: 580px) {/* stylelint-disable-line */
+      display: block;
+    }
+
+    @include landscape() {
+      display: none;
+    }
+
+    @include max() {
+      display: block;
+    }
+  }
+
+  h3 {
+    line-height: 1.87;
+
+    &:before {
+      bottom: -2.5rem;
+      left: -3rem;
+
+      @include landscape() {
+        bottom: -3rem;
+      }
+    }
+  }
+}

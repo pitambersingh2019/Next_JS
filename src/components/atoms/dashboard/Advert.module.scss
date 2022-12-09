@@ -1,0 +1,18 @@
+@import '_styles/mixins/breakpoints';
+
+.root {
+  width: calc(100% - 14rem);
+  margin-left: 7rem;
+  padding: 3rem;
+  background-color: var(--card-colour);
+
+  @include portrait() {
+    width: calc(100% - 22rem);
+    margin-left: 11rem;
+  }
+
+  @include landscape() {
+    width: 100%;
+    margin: 0;
+  }
+}

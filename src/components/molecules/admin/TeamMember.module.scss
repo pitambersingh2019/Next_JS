@@ -1,0 +1,109 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/type';
+
+.header {
+  @include portrait() {
+    @include flex();
+
+    div {
+      margin-left: auto;
+      padding-left: 2rem;
+    }
+  }
+}
+
+.details {
+  @include border-horizontal();
+  padding-bottom: var(--padding);
+  margin-top: 3rem;
+
+  @include portrait() {
+    margin-top: 5rem;
+    @include grid-even(2, 10rem);
+    align-items: center;
+  }
+}
+
+.personal label,
+.calendar > div:last-child > div > div:first-child {
+  > span:first-child {
+    @include visually-hidden();
+  } 
+}
+
+.personal {
+  @include below-portrait() {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    @include border-horizontal();
+  }
+
+  form {
+    @include all() {
+      fieldset > div {
+        grid-gap: 3rem;
+      }
+
+      button[type="submit"] {
+        margin-top: 4rem;
+      }
+    }
+
+    h4 {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.edit {
+  @include flex();
+  margin-bottom: 3rem;
+
+  h2 {
+    @include weight-semibold();
+    margin-right: 2rem;
+  }
+
+  button {
+    margin-top: 0.2rem;
+  }
+}
+
+.span {
+  @include landscape() {
+    grid-column: 1 / 3;
+  }
+}
+
+.overflow {
+  z-index: 5;
+
+  > div:nth-of-type(2) {
+    overflow: visible;
+  }
+}
+
+.focused {
+  z-index: 10;
+}
+
+.stats {
+  @include portrait() {
+    display: flex;
+    position: relative;
+    height: 100%;
+    @include before();
+
+    &:before {
+      height: 100%;
+      top: 0;
+      left: -5rem;
+      border-left: 0.1rem solid var(--border);
+    }
+
+    div {
+      margin: auto 0;
+    }
+  }
+}

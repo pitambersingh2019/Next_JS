@@ -1,0 +1,145 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/animation';
+
+.root {
+  width: 100%;
+}
+
+.input,
+.label {
+  @include visually-hidden();
+}
+
+.options,
+.labels {
+  width: 100%;
+  max-width: 32rem;
+  @include flex();
+  justify-content: space-between;
+}
+
+.options {
+  label {
+    cursor: pointer;
+  }
+}
+
+.expanded {
+  max-width: none;
+}
+
+.scale {
+  position: relative;
+  @include before();
+
+  &:before {
+    width: 100%;
+    border-top: 0.2rem solid var(--grey-light);
+    @include central-y();
+    left: 0;
+  }
+
+  label {
+    span:last-child {
+      width: 1.8rem;
+      height: 1.8rem;
+      background-color: var(--white);
+      border: 0.2rem solid var(--blue);
+      border-radius: 50%;
+      transition: background-color 0.2s ease;
+    }
+
+    &:hover span {
+      background-color: var(--grey-light);
+    }
+
+    input:checked + span {
+      background-color: var(--blue);
+    }
+  }
+}
+
+.emoji {
+  label {
+    &:first-of-type span:before {
+      content: '\01F641';
+    }
+
+    &:nth-of-type(2) span:before {
+      content: '\01F615';
+    }
+
+    &:nth-of-type(3) span:before {
+      content: '\01F610';
+    }
+
+    &:nth-of-type(4) span:before {
+      content: '\01F642';
+    }
+
+    &:nth-of-type(5) span:before {
+      content: '\01F600';
+    }
+
+    span {
+      width: 4rem;
+      height: 4rem;
+      @include before();
+
+      &:before {
+        @include central();
+        width: 4rem;
+        height: 4rem;
+        font-size: 4rem;
+        line-height: 4rem;
+        transform: translate(-50%, -50%) scale(1);
+        transform-origin: 50% 50%;
+        transition: transform 0.2s ease;
+        @include w-c-t();
+      }
+    }
+
+    &:hover span:before,
+    input:checked + span:before {
+      transform: translate(-50%, -50%) scale(1.2);
+    }
+  }
+}
+
+.touched label span:before {
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+.labels {
+  margin-top: 1rem;
+
+  @include landscape() {
+    margin-top: 1.5rem;
+  }
+}
+
+.indicator {
+  display: block;
+  position: relative;
+  order: 1;
+  flex-shrink: 0;
+  @include pseudo();
+
+  &:before,
+  &:after {
+    @include central();
+    border-radius: 50%;
+  }
+
+  &:before {
+    cursor: pointer;
+    width: 4.4rem;
+    height: 4.4rem;
+  }
+
+  + span {
+    order: 3;
+    margin-top: -0.2rem;
+  }
+}

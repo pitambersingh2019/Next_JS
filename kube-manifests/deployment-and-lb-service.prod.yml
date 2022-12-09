@@ -1,0 +1,90 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prosperex-frontend-prod-deployment
+  labels:
+    app: prosperex-frontend-prod
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: prosperex-frontend-prod
+  template:
+    metadata:
+      labels:
+        app: prosperex-frontend-prod
+    spec:
+      containers:
+        - name: prosperex-frontend-prod
+          image: prosperexacr.azurecr.io/main/prosperexfrontend
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "200m"
+            limits:
+              memory: "256Mi"
+              cpu: "400m"
+          env:
+            - name: API_URL
+              value: 'https://admin.staging.prosperex.com.au/api'
+            - name: HOST
+              value: 'www.prosperexdev.com'
+            - name: NODE_TLS_REJECT_UNAUTHORIZED
+              value: '0'
+      priorityClassName: high-priority-apps
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prosperex-frontend-prod-clusterip-service
+  labels:
+    app: prosperex-frontend-prod
+  annotations:
+spec:
+  type: ClusterIP
+  selector:
+    app: prosperex-frontend-prod
+  ports:
+    - port: 80
+      targetPort: 3000
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: prosperex-frontend-prod-hpa
+spec:
+  maxReplicas: 10 # define max replica count
+  minReplicas: 4  # define min replica count
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: prosperex-frontend-prod-deployment
+  targetCPUUtilizationPercentage: 1 # target CPU utilization
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-prosperex-frontend-prod
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: letsencrypt
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
+spec:
+  rules:
+    - host: www.prosperexdev.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: prosperex-frontend-prod-clusterip-service
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        - prosperexdev.com
+        - www.prosperexdev.com
+      secretName: frontend-prod-prosperexdev-com-secret

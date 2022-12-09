@@ -1,0 +1,9 @@
+@import '_styles/mixins/breakpoints';
+
+.root {
+  @include landscape() {
+    div {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,80 @@
+@import '_styles/mixins/layouts';
+
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
+
+  &:hover {
+    span:last-of-type:after {
+      background-color: var(--radio-colour);
+      opacity: 0.999;
+    }
+
+    input:checked + span:last-of-type:after {
+      background-color: var(--white);
+    }
+  }
+}
+
+.text,
+.indicator + span {
+  width: calc(100% - 6.4rem);
+}
+
+.text {
+  order: 2;
+  padding-top: 1.3rem;
+}
+
+.input {
+  @include visually-hidden();
+
+  &:checked + span {
+    &:before {
+      background-color: var(--radio-colour);
+    }
+
+    &:after {
+      opacity: 0.999;
+    }
+  }
+}
+
+.indicator {
+  position: relative;
+  text-indent: -99999rem;
+  order: 1;
+  flex-shrink: 0;
+  @include pseudo();
+  width: 4.4rem;
+  height: 4.4rem;
+  margin: 0 1rem 0 -1.4rem;
+
+  &:before,
+  &:after {
+    @include central();
+    border-radius: 50%;
+  }
+
+  &:before {
+    cursor: pointer;
+    width: 1.4rem;
+    height: 1.4rem;
+    border: 0.2rem solid var(--radio-colour);
+    transition: background-color 0.2s ease;
+  }
+
+  &:after {
+    width: 0.6rem;
+    height: 0.6rem;
+    background-color: var(--white);
+    opacity: 0.001;
+    transition: opacity 0.2s ease;
+  }
+
+  + div {
+    order: 3;
+    margin-top: -0.2rem;
+  }
+}

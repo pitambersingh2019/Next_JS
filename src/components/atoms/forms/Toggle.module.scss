@@ -1,0 +1,93 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
+
+  &:hover input + span:before {
+    background-color: var(--grey-dark);
+  }
+
+  &:hover input:checked + span:before {
+    background-color: var(--radio-hover);
+  }
+
+  &:focus input + span:before {
+    background-color: var(--grey);
+  }
+}
+
+.text,
+.indicator + span {
+  width: calc(100% - 6.4rem);
+}
+
+.text {
+  order: 2;
+  padding-top: 1.4rem;
+
+  @include landscape() {
+    padding-top: 1.2rem;
+  }
+}
+
+.input {
+  @include visually-hidden();
+
+  &:checked + span {
+    &:before {
+      background-color: var(--radio-colour);
+    }
+
+    &:after {
+      transform: translateX(1.2rem);
+    }
+  }
+}
+
+.indicator {
+  position: relative;
+  text-indent: -99999rem;
+  order: 1;
+  flex-shrink: 0;
+  @include before();
+  width: 4.4rem;
+  height: 4.4rem;
+  margin: 0 1rem 0 -0.4rem;
+
+  &:before,
+  &:after {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    will-change: background-color;
+  }
+
+  &:before {
+    width: 3.6rem;
+    height: 2.2rem;
+    @include central();
+    border-radius: 1.3rem;
+    background-color: var(--grey);
+  }
+
+  &:after {
+    content: '';
+    border-radius: 50%;
+    background-color: var(--white);
+    pointer-events: none;
+    position: absolute;
+    width: 1.6rem;
+    height: 1.6rem;
+    left: 0.8rem;
+    top: 1.4rem;
+    transition: transform 0.2s ease;
+    will-change: transform;
+  }
+
+  + div {
+    order: 3;
+    margin-top: -0.2rem;
+  }
+}

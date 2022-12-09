@@ -1,0 +1,12 @@
+# Trigger builds on commits to branches
+trigger:
+  - main
+
+# Do not trigger builds on PRs
+pr: none
+
+resources:
+  - repo: self
+
+extends:
+  template: azure-pipelines.yml

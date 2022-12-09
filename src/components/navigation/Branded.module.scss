@@ -1,0 +1,254 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/interaction';
+@import '_styles/mixins/animation';
+
+.default {
+  &:after,
+  > div > nav:last-child li {
+    background: var(--blue-light);
+    background: linear-gradient(90deg, var(--blue) 0%, var(--blue-light) 100%);
+  }
+
+  > div > nav:last-child li {
+    @include portrait() {
+      background: var(--blue-light);
+      position: relative;
+    }
+  }
+
+  a path {
+    fill: var(--white);
+  }
+}
+
+.custom {
+  &:after,
+  > div > nav:last-child li {
+    background: var(--brand);
+  }
+
+  > div > nav:last-child li {
+    position: relative;
+    @include before();
+
+    &:before {
+      @include absolute-cover();
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+.root {
+  position: relative;
+  z-index: 15;
+  color: var(--white);
+  padding: 1rem 0;
+  @include shadow();
+  @include after();
+
+  @media print {
+    display: none;
+  }
+
+  &:after {
+    @include absolute-cover();
+  }
+
+  @include landscape() {
+    padding: 1.5rem 0;
+  }
+
+  + div {
+    z-index: 13;
+    position: relative;
+  }
+
+  > div {
+    @include flex();
+
+    @include portrait() {
+      padding: 0 4rem;
+    }
+
+    @include landscape() {
+      padding: 0 5rem;
+    }
+
+    @include desktop() {
+      padding: 0 6rem;
+    }
+  }
+}
+
+.notification aside {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-left: -2.8rem;
+  margin-right: 0.5rem;
+}
+
+.expanded {
+  @include before();
+
+  &:before {
+    @include modal-default();
+  }
+
+  button svg {
+    transform: rotate(180deg);
+  }
+}
+
+.logo,
+.visible,
+.user {
+  z-index: 5;
+}
+
+.logo,
+.user figure {
+  @include image-feedback();
+}
+
+.logo {
+  height: 4rem;
+  flex-shrink: 0;
+  margin-right: auto;
+
+  img,
+  svg {
+    height: 100%;
+  }
+
+  img {
+    width: auto;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  @include portrait() {
+    height: 5rem;
+  }
+}
+
+.visible {
+  margin-left: 4rem;
+
+  @include below-portrait() {
+    display: none;
+  }
+
+  ul {
+    @include flex();
+  }
+
+  li {
+    margin-right: 4rem;
+
+    @include desktop() {
+      &:last-of-type {
+        margin-right: 6rem;
+      }
+    }
+  }
+}
+
+.link {
+  @include link-underline('transparent', 'white', 'blue');
+  padding-top: 0.2rem;
+}
+
+.active {
+  @include link-underline-colours('white', 'blue', 'blue-light');
+}
+
+.user {
+  @include flex();
+
+  @include landscape() {
+    padding-left: 4rem;
+    position: relative;
+    @include after();
+
+    &:after {
+      left: 0;
+      top: -1.5rem;
+      height: calc(100% + 3rem);
+      border-left: 0.1rem solid rgba(255, 255, 255, 0.2);
+    }
+
+    aside {
+      left: 2.6rem;
+    }
+  }
+
+  aside {
+    position: absolute;
+    top: -0.2rem;
+    left: -1.2rem;
+
+    @include portrait() {
+      left: -1.4rem;
+    }
+
+    @include landscape() {
+      left: 2.6rem;
+    }
+  }
+
+  > figure > div > span {
+    @include visually-hidden();
+  }
+
+  span {
+    @include link-underline('transparent', 'white', 'blue');
+    padding-top: 0.2rem;
+    margin-left: 2rem;
+
+    @include below-desktop() {
+      display: none;
+    }
+  }
+
+  svg {
+    stroke: var(--white);
+    width: 1rem;
+    margin-left: 1rem;
+    transition: transform 0.3s ease-out;
+    @include w-c-t();
+
+    @include landscape() {
+      margin-left: 1.5rem;
+    }
+  }
+}
+
+.avatar {
+  width: 4rem;
+  height: 4rem;
+
+  @include portrait() {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+.hidden {
+  top: calc(100% + 1rem);
+
+  @include landscape() {
+    top: calc(100% + 1.5rem);
+  }
+}
+
+.moved {
+  @include portrait() {
+    display: none;
+  }
+
+  a {
+    position: relative;
+  }
+}

@@ -1,0 +1,22 @@
+@import '_styles/mixins/breakpoints';
+
+.root aside,
+.options form {
+  padding-top: var(--margin);
+}
+
+.root {
+  > section > h2 {
+    margin-bottom: 0;
+  }
+
+  label {
+    max-width: 32rem;
+  }
+
+  button[type="submit"] {
+    @include all() {
+      margin-top: var(--margin);
+    }
+  }
+}

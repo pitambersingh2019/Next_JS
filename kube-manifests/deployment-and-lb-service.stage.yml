@@ -1,0 +1,77 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prosperex-frontend-stage-deployment
+  labels:
+    app: prosperex-frontend-stage
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: prosperex-frontend-stage
+  template:
+    metadata:
+      labels:
+        app: prosperex-frontend-stage
+    spec:
+      containers:
+        - name: prosperex-frontend-stage
+          image: prosperexacr.azurecr.io/main/prosperexfrontend
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "200m"
+            limits:
+              memory: "256Mi"
+              cpu: "400m"
+          env:
+            - name: API_URL
+              value: 'https://admin.staging.prosperex.com.au/api'
+            - name: HOST
+              value: 'www.frontend-stage.prosperexdev.com'
+            - name: NODE_TLS_REJECT_UNAUTHORIZED
+              value: '0'
+      priorityClassName: medium-priority-apps
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prosperex-frontend-stage-clusterip-service
+  labels:
+    app: prosperex-frontend-stage
+  annotations:
+spec:
+  type: ClusterIP
+  selector:
+    app: prosperex-frontend-stage
+  ports:
+    - port: 80
+      targetPort: 3000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-prosperex-frontend-stage
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: letsencrypt
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
+spec:
+  rules:
+    - host: www.frontend-stage.prosperexdev.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: prosperex-frontend-stage-clusterip-service
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        - frontend-stage.prosperexdev.com
+        - www.frontend-stage.prosperexdev.com
+      secretName: frontend-stage-prosperexdev-com-secret

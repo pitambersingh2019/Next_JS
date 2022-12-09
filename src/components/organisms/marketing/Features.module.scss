@@ -1,0 +1,106 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+
+.root {
+  padding: 10rem 0;
+
+  &:before {
+    background: url('./../../../assets/images/swirl-main.svg') 50% 0 no-repeat;
+    background-size: cover;
+    background-position: calc(50% + var(--scroll) * 10rem) 0;
+  }
+
+  @include portrait() {
+    padding: 15rem 0;
+  }
+
+  @include desktop() {
+    padding: 20rem 0;
+  }
+
+  > div {
+    @include col();
+  }
+}
+
+.grid {
+  width: 100%;
+  margin: 6rem 0;
+}
+
+.item {
+  @include col();
+  margin-top: 6rem;
+
+  &:last-of-type {
+    margin-bottom: 6rem;
+  }
+
+  @include portrait() {
+    display: grid;
+    grid-template-columns: 28rem minmax(1rem, 1fr);
+    grid-gap: 5rem;
+    margin-top: 8rem;
+
+    &:nth-of-type(even) {
+      grid-template-columns: minmax(1rem, 1fr) 28rem;
+
+      > * {
+        grid-row: 1 / 2;
+      }
+
+      div {
+        grid-column: 1 / 2;
+      }
+    }
+
+    &:last-of-type {
+      margin-bottom: 8rem;
+    }
+  }
+
+  @include desktop() {
+    grid-gap: 6rem;
+
+    &:nth-of-type(odd) {
+      padding: 0 calc(calc(var(--col) + var(--gap)) * 2) 0 calc(var(--col) + var(--gap));
+    }
+
+    &:nth-of-type(even) {
+      padding: 0 calc(var(--col) + var(--gap)) 0 calc(calc(var(--col) + var(--gap)) * 2);
+    }
+  }
+
+  @include max() {
+    &:nth-of-type(odd) {
+      padding: 0 25rem 0 12.5rem;
+    }
+
+    &:nth-of-type(even) {
+      padding: 0 12.5rem 0 25rem;
+    }
+  }
+
+  h3 {
+    @include below-portrait() {
+      margin-top: 3rem;
+    }
+  }
+}
+
+.image {
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  @include below-portrait() {
+    width: calc(100% - 6rem);
+    max-width: 28rem;
+  }
+}
+
+.block {
+  width: 100%;
+  @include col();
+  align-items: flex-start;
+  justify-content: center;
+}

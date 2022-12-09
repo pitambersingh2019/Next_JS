@@ -1,0 +1,36 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+
+.root {
+  > h1,
+  > h2 {
+    color: var(--title-colour);
+    margin-bottom: var(--margin);
+    opacity: 0.999;
+  }
+
+  > h2 {
+    @include flex();
+    align-items: flex-start;
+
+    + p {
+      @include all() {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-top: 0.4rem;
+
+  svg {
+    fill: var(--title-colour);
+  }
+}
+
+.error {
+  width: 100%;
+}

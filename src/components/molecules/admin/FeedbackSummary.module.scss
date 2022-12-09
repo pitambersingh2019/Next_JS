@@ -1,0 +1,47 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+
+.root {
+  @include flex();
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  h2 {
+    flex-grow: 1;
+  }
+
+  table {
+    height: 100%;
+  }
+}
+
+.empty {
+  display: block;
+
+  > p {
+    @include all() {
+      margin: 0 var(--padding) auto;
+    }
+  }
+}
+
+.pagination {
+  margin: -1rem 1.5rem 2rem 1.5rem;
+
+  @include portrait() {
+    margin: -1rem 1.5rem 0;
+  }
+}
+
+.slider {
+  @include slider();
+  overflow: hidden;
+
+  > div > div > div {
+    width: 100%;
+  }
+}
+
+.slide {
+  width: 100%;
+}

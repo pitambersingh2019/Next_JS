@@ -1,0 +1,9 @@
+.highcharts-axis-labels {
+  @include montserrat();
+
+  text {
+    font-size: 1rem !important;
+    color: var(--white) !important;
+    fill: var(--white) !important;
+  }
+}

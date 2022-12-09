@@ -1,0 +1,70 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+
+.root {
+  position: relative;
+
+  th,
+  td {
+    max-width: unset;
+
+    @include below-portrait() {
+      &:first-of-type {
+        padding-left: 6rem;
+      }
+    }
+  }
+
+  p {
+    margin-left: 3rem;
+
+    @include all() {
+      margin-top: 0;
+    }
+
+    @include portrait() {
+      margin-left: 4rem;
+    }
+
+    @include landscape() {
+      margin-left: 5rem;
+    }
+  }
+
+  @include landscape() {
+    width: 100%;
+  }
+}
+
+.arrow {
+  position: relative;
+
+  svg {
+    width: 1.2rem;
+    position: absolute;
+    @include central-y();
+    left: 3rem;
+
+    @include portrait() {
+      left: 1.5rem;
+    }
+
+    @include landscape() {
+      left: 2rem;
+    }
+  }
+}
+
+.improve {
+  svg {
+    fill: var(--green);
+  }
+}
+
+.decline {
+  svg {
+    fill: var(--red);
+    transform-origin: top center;
+    transform: rotate(180deg) translateY(-50%);
+  }
+}

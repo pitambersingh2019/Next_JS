@@ -1,0 +1,43 @@
+.admin {
+  --background-colour: var(--black);
+  --text-colour: var(--white);
+  --card-colour: var(--grey-darkest);
+  --card-trans-zero: rgba(43, 49, 59, 0);
+  --card-trans-full: rgba(43, 49, 59, 1);
+  --title-colour: var(--white);
+  --icon-colour: var(--white);
+  --radio-colour: var(--blue-light);
+  --radio-hover: var(--blue);
+  --shadow-colour: rgba(0, 0, 0, 0.2);
+  --missed-colour: var(--grey-dark);
+  --selection-background-colour: var(--white);
+  --selection-text-colour: var(--black);
+  --primary-button-colour: var(--black);
+  --primary-button-hover: var(--white);
+  --secondary-button-colour: var(--white);
+  --secondary-button-hover: var(--black);
+}
+
+.home,
+.employee {
+  --selection-background-colour: var(--black);
+  --selection-text-colour: var(--white);
+}
+
+.employee {
+  --background-colour: var(--grey-light);
+  --text-colour: var(--black);
+  --card-colour: var(--white);
+  --card-trans-zero: rgba(255, 255, 255, 0);
+  --card-trans-full: rgba(255, 255, 255, 1);
+  --title-colour: var(--blue);
+  --icon-colour: var(--blue);
+  --radio-colour: var(--blue);
+  --radio-hover: var(--blue-light);
+  --shadow-colour: rgba(0, 0, 0, 0.1);
+  --missed-colour: var(--grey);
+  --primary-button-colour: var(--white);
+  --primary-button-hover: var(--blue);
+  --secondary-button-colour: var(--blue);
+  --secondary-button-hover: var(--white);
+}

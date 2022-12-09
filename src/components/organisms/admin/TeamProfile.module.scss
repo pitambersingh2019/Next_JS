@@ -1,0 +1,101 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/type';
+
+.header {
+  @include portrait() {
+    @include flex();
+
+    div {
+      margin-left: auto;
+      padding-left: 2rem;
+
+      button {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+.inactive {
+  padding: 18.7rem 0;
+  text-align: center;
+  
+  > h2 {
+    margin-bottom: 4rem;
+  }
+}
+
+.details {
+  z-index: 5;
+}
+
+.training,
+.happiness,
+.surveys{
+  z-index: 3;
+  @include border-horizontal();
+  padding: var(--padding) 0;
+
+  h2,
+  h2 + div:not(:nth-of-type(2)) {
+    padding: 0 var(--padding);
+    margin-bottom: var(--margin);
+  }
+
+  > div > nav {
+    margin: -5rem auto 2rem -1.6rem;
+    padding: 0 var(--padding);
+  }
+
+  table {
+    th,
+    td {
+      &:first-of-type {
+        div {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.happiness,
+.surveys {
+  table {
+    th,
+    td {
+      &:not(:first-of-type) {
+        @include all() {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.training {
+  table {
+    th,
+    td {
+      &:nth-of-type(5),
+      &:nth-of-type(6),
+      &:nth-of-type(7) {
+        @include all() {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.surveys {
+  h2 + div:not(:nth-of-type(2)) {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.praise {
+  padding: var(--padding) var(--padding) 0;
+}

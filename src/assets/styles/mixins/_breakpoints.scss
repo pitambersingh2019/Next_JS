@@ -1,0 +1,112 @@
+/* stylelint-disable unit-allowed-list */
+$min: 320px;
+$mobile: 414px;
+$portrait: 750px;
+$landscape: 1000px;
+$desktop: 1300px;
+$max: 1680px;
+
+@mixin all() {
+  @media screen and (min-width: 1px) {
+    &:not(#placeholder) {
+      @content;
+    }
+  }
+}
+
+@mixin breakpoint($width) {
+  @media screen and (min-width: $width) {
+    &:not(#placeholder) {
+      @content;
+    }
+  }
+}
+
+@mixin below-mobile() {
+  @media screen and (max-width: $mobile - 1) {
+    &:not(#placeholder) {
+      @content;
+    }
+  }
+}
+
+@mixin mobile() {
+  @media screen and (min-width: $mobile) {
+    &:not(#placeholder) {
+      @content;
+    }
+  }
+}
+
+@mixin portrait() {
+  @media screen and (min-width: $portrait) {
+    &:not(#placeholder) {
+      @content;
+    }
+  }
+}
+
+@mixin portrait-only() {
+  @media screen and (min-width: $portrait) and (max-width: $landscape - 1) {
+    &:not(#placeholder) {
+      @content;
+    }
+  }
+}
+
+@mixin below-portrait() {
+  @media screen and (max-width: $portrait - 1) {
+    &:not(#placeholder) {
+      @content;
+    }
+  }
+}
+
+@mixin landscape() {
+  @media screen and (min-width: $landscape) {
+    &:not(#placeholder) {
+      @content;
+    }
+  }
+}
+
+@mixin landscape-only() {
+  @media screen and (min-width: $landscape) and (max-width: $desktop - 1) {
+    &:not(#placeholder) {
+      @content;
+    }
+  }
+}
+
+@mixin below-landscape() {
+  @media screen and (max-width: $landscape - 1) {
+    &:not(#placeholder) {
+      @content;
+    }
+  }
+}
+
+@mixin desktop() {
+  @media screen and (min-width: $desktop) {
+    &:not(#placeholder) {
+      @content;
+    }
+  }
+}
+
+@mixin below-desktop() {
+  @media screen and (max-width: $desktop - 1) {
+    &:not(#placeholder) {
+      @content;
+    }
+  }
+}
+
+@mixin max() {
+  @media screen and (min-width: $max) {
+    &:not(#placeholder) {
+      @content;
+    }
+  }
+}
+/* stylelint-enable unit-allowed-list */

@@ -1,0 +1,41 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+
+.metric {
+  @include flex();
+  margin-bottom: 2rem;
+
+  @include portrait() {
+    margin-bottom: 3rem;
+  }
+
+  div {
+    flex-shrink: 0;
+    margin-right: 2rem;
+
+    @include portrait() {
+      margin-right: 3rem;
+    }
+  }
+}
+
+.pagination {
+  margin: 2rem 0 4rem var(--offset);
+}
+
+.slider {
+  @include slider();
+  overflow: hidden;
+
+  > div > div > div {
+    width: 100%;
+  }
+}
+
+.slide {
+  width: 100%;
+}
+
+.actions {
+  padding-left: var(--padding);
+}

@@ -1,0 +1,233 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/interaction';
+
+.root {
+  margin-top: -10.5rem;
+  overflow: hidden;
+  position: relative;
+
+  &:before {
+    background: url('./../../../assets/images/swirl-hero.svg') 45% 0 no-repeat;
+    background-size: auto 100%;
+    background-position: calc(45% + var(--scroll) * 10rem) 0;
+  }
+
+  @include portrait() {
+    margin-top: -17rem;
+  }
+
+  @include desktop() {
+    &:before {
+      background-position: calc(50% + var(--scroll) * 10rem) 0;
+    }
+  }
+
+  > div {
+    padding: 15rem 4rem 30rem;
+    @include col();
+
+    @include below-portrait() {
+      text-align: center;
+    }
+
+    @include portrait() {
+      align-items: flex-start;
+      padding: 22rem 8rem 37rem;
+    }
+
+    @include landscape() {
+      align-items: flex-start;
+      padding: 22rem var(--gutter) 37rem;
+    }
+
+    @include desktop() {
+      padding: 29rem var(--gutter) 23rem;
+
+      > *:not(img):not(button) {
+        width: 50%;
+        min-width: 59rem;
+        max-width: 70rem;
+      }
+    }
+  }
+
+  h1 {
+    z-index: 1;
+  }
+
+  h1 span {
+    display: inline-block;
+    position: relative;
+    @include before();
+
+    &:before {
+      width: 100%;
+      height: 2.3rem;
+      bottom: -1.3rem;
+      left: 0;
+      background: url('./../../../assets/images/squiggle.svg') 0 0 no-repeat;
+      background-size: 100% auto;
+      z-index: -1;
+    }
+
+    @include landscape() {
+      &:before {
+        height: 2.6rem;
+        bottom: -1.5rem;
+      }
+    }
+  }
+}
+
+.text {
+  position: relative;
+
+  p {
+    margin-top: 3rem;
+  }
+}
+
+.nav {
+  margin-top: 4rem;
+
+  ul {
+    @include portrait() {
+      @include flex();
+    }
+  }
+
+  li:not(:first-of-type) {
+    @include below-portrait() {
+      margin-top: 2rem;
+    }
+
+    @include portrait() {
+      margin-left: 3rem;
+    }
+  }
+}
+
+.image {
+  display: block;
+  position: absolute;
+  width: 59rem;
+  height: auto;
+  bottom: -15rem;
+  left: -2rem;
+
+  @media screen and (min-width: 600px) {/* stylelint-disable-line */
+    @include central-x();
+  }
+
+  @include portrait() {
+    width: 77.9rem;
+    bottom: -19rem;
+    transform: none;
+    left: var(--gutter);
+  }
+
+  @include landscape() {
+    left: calc(var(--gutter) - 2rem);
+  }
+
+  @include desktop() {
+    width: 46%;
+    left: unset;
+    right: -9rem;
+    bottom: unset;
+    top: 17.5rem;
+    max-width: 77.5rem;
+  }
+}
+
+.faded {
+  opacity: 0.6;
+}
+
+.modal {
+  section {
+    max-width: calc(#{$max} - 20rem);
+    top: var(--gutter);
+    height: calc(100% - var(--gutter));
+    padding: 0;
+
+    &:before,
+    > div {
+      height: calc(100% - var(--gutter));
+    }
+
+    &:before {
+      background-color: var(--black);
+    }
+
+    @include landscape() {
+      top: 10rem;
+      width: calc(100% - 20rem);
+      height: calc(100% - 20rem);
+      padding: 0;
+
+      &:before,
+      > div {
+        height: 100%;
+      }
+    }
+  }
+}
+
+.play {
+  position: absolute;
+  bottom: 8rem;
+  @include central-x();
+  width: 10rem;
+  @include aspect-ratio(60%);
+
+  &:before {
+    height: unset;
+    top: unset;
+    transform: unset;
+  }
+
+  svg {
+    fill: var(--white);
+    filter: drop-shadow(0 0 6rem rgba(0, 0, 0, 0.5));
+  }
+
+  &:hover svg {
+    fill: var(--grey);
+  }
+
+  &:active {
+    transform: translateX(-50%) scale(0.98);
+  }
+
+  @include portrait() {
+    bottom: 10rem;
+  }
+
+  @include landscape() {
+    width: 15rem;
+  }
+
+  @include desktop() {
+    left: unset;
+    bottom: unset;
+    top: 33rem;
+    transform: unset;
+    right: 19.8rem;
+  }
+}
+
+.frame {
+  @include absolute-cover();
+
+  div,
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  iframe {
+    pointer-events: auto;
+  }
+}

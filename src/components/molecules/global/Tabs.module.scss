@@ -1,0 +1,25 @@
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/interaction';
+
+.root {
+  ul {
+    @include flex();
+    justify-content: space-between;
+  }
+}
+
+.button {
+  height: 4.4rem;
+  @include text-hover-bold();
+  margin-bottom: -0.1rem;
+  border-bottom: 0.1rem solid var(--transparent);
+
+  &:active {
+    border-color: var(--white);
+  }
+}
+
+.selected {
+  border-color: var(--white);
+  font-variation-settings: 'wght' var(--bold);
+}

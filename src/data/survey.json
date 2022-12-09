@@ -1,0 +1,66 @@
+{
+  "widget": [
+    {
+      "name": "First quarterly employee survey, 2021",
+      "responseRate": 90
+    },
+    {
+      "name": "Employee Onboarding",
+      "responseRate": 65
+    }
+  ],
+  "create": {
+    "name": "New survey",
+    "description": "Description for new survey",
+    "start": true,
+    "questions": [
+      {
+        "question": "Why do birds?",
+        "type": 1,
+        "choices": [{
+          "text": "Suddenly",
+          "correct": false
+        }, {
+          "text": "Appear",
+          "correct": true
+        }, {
+          "text": "Everywhere",
+          "correct": false
+        }]
+      },
+      {
+        "question": "How happy are you?",
+        "type": 6
+      },
+      {
+        "question": "In no more than 50 words, describe your last three months at the business",
+        "type": 3
+      },
+      {
+        "question": "Out of five, how would you rate the coffee?",
+        "type": 5,
+        "choices": [{
+          "start": "Terrible",
+          "end": "Great"
+        }, {
+          "start": "Terrible",
+          "end": "Great"
+        }]
+      },
+      {
+        "question": "What would make your working life easier?",
+        "type": 2
+      },
+      {
+        "question": "Select all that apply",
+        "type": 4,
+        "choices": [{
+          "text": "Choice one"
+        }, {
+          "text": "Choice two"
+        }]
+      }
+    ],
+    "recipients": [1170, 1169, 1215]
+  }
+}

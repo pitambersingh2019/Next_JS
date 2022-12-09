@@ -1,0 +1,26 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+
+.root {
+  label {
+    @include visually-hidden();
+  }
+
+  :global(.react-daterange-picker__calendar) {
+    position: relative !important;
+    height: auto !important;
+    @include calendar-notch();
+  }
+
+  :global(.react-calendar) {
+    @include shadow();
+  }
+
+  :global(.react-daterange-picker__wrapper) {
+    @include visually-hidden();
+  }
+}
+
+.hide {
+  display: none;
+}

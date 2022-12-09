@@ -1,0 +1,65 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/type';
+@import '_styles/mixins/layouts';
+
+.root {
+  background: var(--blue-pale);
+
+  ul {
+    display: grid;
+    grid-gap: 3rem;
+
+    @media screen and (min-width: 500px) {/* stylelint-disable-line */
+      grid-template-columns: repeat(2, minmax(1rem, 1fr));
+      grid-gap: 3rem var(--gap);
+    }
+
+    @include portrait() {
+      grid-template-columns: repeat(3, minmax(1rem, 1fr));
+
+      li {
+        @include col();
+
+        &:first-of-type {
+          align-items: flex-start;
+        }
+
+        &:nth-of-type(3) {
+          align-items: flex-end;
+        }
+      }
+    }
+  }
+}
+
+.content {
+  position: relative;
+}
+
+.font {
+  h2,
+  h4 {
+    margin-bottom: 1rem;
+  }
+
+  h4,
+  pre {
+    color: var(--grey-dark);
+  }
+
+  h4 {
+    text-transform: none;
+  }
+}
+
+.semibold {
+  @include weight-semibold();
+}
+
+.medium {
+  @include weight-medium();
+}
+
+.regular {
+  @include weight-regular();
+}

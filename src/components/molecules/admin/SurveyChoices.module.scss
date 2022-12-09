@@ -1,0 +1,144 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/animation';
+
+.root {
+  opacity: 0.001;
+  transition: opacity 0.5s ease 1s;
+  @include w-c-o();
+
+  > span {
+    position: relative;
+
+    &:first-child {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  label > span {
+    @include visually-hidden();
+  }
+}
+
+.shown {
+  opacity: 0.999;
+}
+
+.inactive {
+  @include visually-hidden();
+}
+
+.choice {
+  position: relative;
+  padding-left: 3.5rem;
+  @include before();
+
+  &:before {
+    width: 1.6rem;
+    height: 1.6rem;
+    top: 1.2rem;
+    left: 0;
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: 1rem;
+  }
+
+  @include portrait() {
+    display: flex;
+    align-items: flex-start;
+
+    &:before {
+      top: 1.4rem;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      min-width: 30rem;
+    }
+  }
+
+  @include landscape() {
+    &:before {
+      top: 1.6rem;
+    }
+  }
+}
+
+.removal {
+  display: flex;
+  align-items: flex-start;
+
+  @include below-portrait() {
+    flex-wrap: wrap;
+
+    label {
+      width: calc(100% - 4.4rem);
+    }
+  }
+}
+
+.remove {
+  margin: 0.2rem 0 0 0;
+  width: 4.4rem;
+  height: 4.4rem;
+  transform: translateX(1.6rem);
+
+  @include portrait() {
+    margin-left: auto;
+    order: 3;
+  }
+
+  svg {
+    width: 1rem;
+    stroke: var(--white);
+  }
+
+  &:hover svg {
+    stroke: var(--blue-light);
+  }
+}
+
+.correct {
+  margin-top: 1rem;
+
+  @include portrait() {
+    margin: 1.4rem 0 0 2rem;
+  }
+
+  @include landscape() {
+    margin-top: 1.6rem;
+  }
+}
+
+.multi,
+.check {
+  &:before {
+    border: 0.2rem solid var(--blue-light);
+  }
+}
+
+.multi:before {
+  border-radius: 50%;
+}
+
+.check:before {
+  border-radius: 0.2rem;
+}
+
+.rating {
+  &:first-of-type:before {
+    content: '1';
+  }
+
+  &:last-of-type:before {
+    content: '5';
+  }
+}
+
+.add {
+  margin: 2rem 0 0 3.5rem;
+}

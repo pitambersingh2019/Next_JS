@@ -1,0 +1,195 @@
+{
+	"meta": {
+		"title": "This is the meta title",
+		"description": "This is the meta description",
+		"keywords": "this, is, the, keyword",
+		"canonical": "http://admin.staging.prosperex.com.au/",
+		"robots": "noindex, nofollow",
+		"sharing": {
+			"opengraph": {
+				"url": "http://admin.staging.prosperex.com.au/",
+				"title": "OG title",
+				"description": "OG description",
+				"image": "http://admin.staging.prosperex.com.au/media/3yyivlsf/hero-large.png"
+			},
+			"twitter": {
+				"title": "Twitter title",
+				"description": "Twitter description",
+				"image": "http://admin.staging.prosperex.com.au/media/3yyivlsf/hero-large.png"
+			}
+		}
+	},
+	"hero": {
+		"heading": "Total employee <span>engagement</span>",
+		"text": "<p>Attract, engage, reward and retain your employees to increase performance and profitability in real time</p>",
+		"image": {
+			"src": "http://admin.staging.prosperex.com.au/media/3yyivlsf/hero-large.png?anchor=center&mode=crop",
+			"alt": "Hero Large"
+		},
+		"primaryLink": {
+			"target": "/",
+			"text": "Get a demo"
+		},
+		"secondaryLink": {
+			"target": "#",
+			"text": "Find out more"
+		}
+	},
+	"components": [{
+		"id": "UspBar",
+		"content": {
+			"text": "<p>This is <strong>the</strong> USP <span style=\"text-decoration: underline;\">bar</span></p>"
+		}
+	}, {
+		"id": "ProductOverview",
+		"content": {
+			"image": {
+				"src": "http://admin.staging.prosperex.com.au/media/bvydqugc/unnamed-section-image.jpg?anchor=center&mode=crop",
+				"alt": "Product Overview Image"
+			},
+			"heading": "Product 1",
+			"items": [{
+				"icon": {
+					"src": "http://admin.staging.prosperex.com.au/media/ffylksqh/icon-benefits.svg?mode=pad",
+					"alt": "Icon Benefits"
+				},
+				"heading": "Employee benefits",
+				"text": "Attract and retain your top talent with wellness and benefits."
+			}, {
+				"icon": {
+					"src": "http://admin.staging.prosperex.com.au/media/l5hazeae/icon-surveys.svg?mode=pad",
+					"alt": "Icon Surveys"
+				},
+				"heading": "Surveys",
+				"text": "Understand your employees better. Happy employees deliver better experiences for your customers."
+			}, {
+				"icon": {
+					"src": "http://admin.staging.prosperex.com.au/media/xrvnybxt/icon-learning.svg?mode=pad",
+					"alt": "Icon Learning"
+				},
+				"heading": "Micro learning",
+				"text": "Develop your employees. Growth, continuous improvement, acquire new skills."
+			}, {
+				"icon": {
+					"src": "http://admin.staging.prosperex.com.au/media/k2vfhgz1/icon-recognition.svg?mode=pad",
+					"alt": "Icon Recognition"
+				},
+				"heading": "Recognition",
+				"text": "Motivate, reward, acknowledge."
+			}, {
+				"icon": {
+					"src": "http://admin.staging.prosperex.com.au/media/yrlk4y31/icon-feedback.svg?mode=pad",
+					"alt": "Icon Feedback"
+				},
+				"heading": "Feedback",
+				"text": "Lorum ipsum dolor sit amet, consectetur adipsicing elit."
+			}, {
+				"icon": {
+					"src": "http://admin.staging.prosperex.com.au/media/sm3nrrzj/icon-reporting.svg?mode=pad",
+					"alt": "Icon Reporting"
+				},
+				"heading": "Real-time reporting and insights",
+				"text": "Lorum ipsum dolor sit amet, consectetur adipsicing elit."
+			}]
+		}
+	}, {
+		"id": "HowItWorks",
+		"content": {
+			"heading": "How we work",
+			"text": "<div class=\"page\">\n<div class=\"layoutArea\">\n<div class=\"column\">\n<p><span>Leverage technology to build employee personas that help you better understand and interact with your employees, and make smarter, data driven, business decisions </span></p>\n</div>\n</div>\n</div>",
+			"items": [{
+				"image": {
+					"src": "http://admin.staging.prosperex.com.au/media/4q1lzofo/how-we-work-1.jpg?anchor=center&mode=crop",
+					"alt": "How We Work 1"
+				},
+				"heading": "Great EX",
+				"conjoiningText": "leads to..",
+				"text": "Great CX"
+			}, {
+				"image": {
+					"src": "http://admin.staging.prosperex.com.au/media/0ynfq3o1/how-we-work-2.jpg?anchor=center&mode=crop",
+					"alt": "How We Work 2"
+				},
+				"heading": "Happier clients",
+				"conjoiningText": "leads to..",
+				"text": "Retention and profitability"
+			}, {
+				"image": {
+					"src": "http://admin.staging.prosperex.com.au/media/2hshfled/how-we-work-3.jpg?anchor=center&mode=crop",
+					"alt": "How We Work 3"
+				},
+				"heading": "Culture",
+				"conjoiningText": "leads to..",
+				"text": "Maintain a culture through surveys, recognition, rewards and benefits. Retention, differentiation."
+			}]
+		}
+	}, {
+		"id": "Features",
+		"content": {
+			"heading": "Features",
+			"items": [{
+				"image": {
+					"src": "http://admin.staging.prosperex.com.au/media/thtl25s4/feature-discounts.png?anchor=center&mode=crop",
+					"alt": "Feature - Discounts"
+				},
+				"heading": "Employee benefits",
+				"text": "<div class=\"page\">\n<div class=\"layoutArea\">\n<div class=\"column\">\n<p>O<span>ffer your employees discounts from our dozens of partners lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam. </span></p>\n</div>\n</div>\n</div>"
+			}, {
+				"image": {
+					"src": "http://admin.staging.prosperex.com.au/media/dk0j1nah/feature-happiness.png?anchor=center&mode=crop",
+					"alt": "Feature - Happiness"
+				},
+				"heading": "Surveys",
+				"text": "<div class=\"page\">\n<div class=\"layoutArea\">\n<div class=\"column\">\n<p><span>Measure employee satisfaction and gather feedback lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam. </span></p>\n</div>\n</div>\n</div>"
+			}, {
+				"image": {
+					"src": "http://admin.staging.prosperex.com.au/media/2exdjiq0/feature-learning.png?anchor=center&mode=crop",
+					"alt": "Feature - Learning"
+				},
+				"heading": "Micro learning",
+				"text": "<div class=\"page\">\n<div class=\"layoutArea\">\n<div class=\"column\">\n<p><span>Promote independent learning through short bursts of quiz content lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam. </span></p>\n</div>\n</div>\n</div>"
+			}, {
+				"image": {
+					"src": "http://admin.staging.prosperex.com.au/media/hmhlufu4/feature-learning-data.png?anchor=center&mode=crop",
+					"alt": "Feature - Learning Data"
+				},
+				"heading": "Real-time reporting and insights",
+				"text": "<div class=\"page\">\n<div class=\"layoutArea\">\n<div class=\"column\">\n<p><span>Congratulate employees for their hard work lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span></p>\n</div>\n</div>\n</div>"
+			}],
+			"button": {
+				"target": "/",
+				"text": "Get in touch for a demo"
+			}
+		}
+	}, {
+		"id": "LogoWall",
+		"content": {
+			"heading": "Who we work with",
+			"items": [{
+				"image": {
+					"src": "http://admin.staging.prosperex.com.au/media/xelmqow2/work-with-logo1.png?anchor=center&mode=crop",
+					"alt": "Lendlease Logo"
+				},
+				"url": "http://www.google.com"
+			}, {
+				"image": {
+					"src": "http://admin.staging.prosperex.com.au/media/nqxhxd5i/work-with-logo2.png?anchor=center&mode=crop",
+					"alt": "CPB Contractors Logo"
+				},
+				"url": "http://www.google2.com"
+			}, {
+				"image": {
+					"src": "http://admin.staging.prosperex.com.au/media/x20bxejq/work-with-logo3.png?anchor=center&mode=crop",
+					"alt": "Transurban Logo"
+				},
+				"url": "http://www.google2.com"
+			}, {
+				"image": {
+					"src": "http://admin.staging.prosperex.com.au/media/aeqn3mkz/work-with-logo4.png?anchor=center&mode=crop",
+					"alt": "Mirvac Logo"
+				},
+				"url": "http://www.google2.com"
+			}]
+		}
+	}]
+}

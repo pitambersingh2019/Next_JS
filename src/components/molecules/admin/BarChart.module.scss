@@ -1,0 +1,62 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+
+.root {
+  position: relative;
+}
+
+.header,
+.change {
+  @include flex();
+}
+
+.header {
+  margin-bottom: 2rem;
+
+  h4 {
+    margin-right: 2rem;
+  }
+}
+
+.change {
+  svg {
+    flex-shrink: 0;
+    width: 1.6rem;
+    margin-right: 1.5rem;
+  }
+}
+
+.improve {
+  svg {
+    fill: var(--green);
+  }
+}
+
+.decline {
+  svg {
+    fill: var(--red);
+    transform: rotate(180deg);
+  }
+}
+
+.chart {
+  height: var(--height-mobile);
+
+  @include portrait() {
+    height: var(--height-portrait);
+  }
+
+  @include landscape() {
+    height: var(--height-landscape);
+  }
+
+  @include desktop() {
+    height: var(--height-desktop);
+  }
+
+  @media screen and (min-width: 1550px) {/* stylelint-disable-line */
+    &:not(#placeholder) {
+      height: var(--height-larger);
+    }
+  }
+}

@@ -1,0 +1,536 @@
+@include placeholder(var(--grey));
+@include autocomplete() {
+  -webkit-text-fill-color: var(--black);
+  -webkit-box-shadow: 0 0 0rem 10rem var(--white) inset;
+}
+
+.form {
+  &--standard {
+    fieldset:not(:first-of-type),
+    button[type="submit"] {
+      margin-top: 4rem;
+
+      @include landscape() {
+        margin-top: 8rem;
+      }
+    }
+
+    .form__checkbox,
+    .form__radio {
+      @include landscape() {
+        grid-column: 1 / 3;
+      }
+    }
+
+    .form__checkbox + .form__checkbox,
+    .form__radio {
+      margin-top: -3.5rem;
+    }
+  }
+
+  &--survey {
+    &__header,
+    &__section {
+      background-color: var(--white);
+      padding: 3rem;
+
+      @include landscape() {
+        padding: 5rem;
+      }
+
+      p {
+        font-size: 1.4rem;
+
+        @include landscape() {
+          font-size: 1.6rem;
+        }
+      }
+    }
+
+    &__header {
+      border-bottom: 0.1rem solid var(--grey-light);
+
+      .card & {
+        border-radius: 0.5rem 0.5rem 0 0;
+      }
+
+      legend {
+        color: var(--blue);
+      }
+    }
+
+    &__section {
+      &:nth-of-type(even) {
+        background-color: var(--stripe);
+      }
+
+      .card fieldset + & {
+        &:last-child {
+          border-top: 0.1rem solid var(--grey-light);
+          border-radius: 0 0 0.5rem 0.5rem;
+        }
+      }
+    }
+
+    &__title {
+      margin-bottom: 1rem;
+
+      + p {
+        margin: 0 0 3rem;
+
+        @include landscape() {
+          margin-top: 0;
+        }
+
+        + .form__radio {
+          margin-top: -1rem;
+        }
+      }
+    }
+  }
+
+  &__grid {
+    @include grid-even(1, 2rem);
+
+    @include landscape() {
+      @include grid-cols(2);
+      grid-gap: 3rem 6rem;
+
+      legend {
+        grid-column: 1 / 3;
+      }
+    }
+  }
+
+  &__input {
+    &--invalid {
+      color: var(--grey);
+    }
+
+    &--valid {
+      color: var(--text-colour);
+    }
+  }
+}
+
+fieldset {
+  display: block;
+}
+
+legend,
+label,
+input,
+textarea {
+  display: block;
+}
+
+legend {
+  &[class=""],
+  &:not([class]) {
+    @include visually-hidden();
+  }
+}
+
+label > svg,
+.label__icon > svg,
+.label__icon:after,
+.form__date:after {
+  pointer-events: none;
+}
+
+label > svg,
+.label__icon > svg {
+  width: 1rem;
+  position: absolute;
+  right: 2rem;
+  stroke: var(--icon-colour);
+}
+
+label {
+  position: relative;
+
+  > svg {
+    top: 4.6rem;
+
+    @include landscape() {
+      top: 5.4rem;
+    }
+  }
+}
+
+.label__icon,
+.form__date {
+  position: relative;
+  @include after();
+
+  &:after {
+    width: 5rem;
+    height: 100%;
+    top: 0;
+    right: 0.2rem;
+    background: linear-gradient(90deg, var(--card-trans-zero) 0%, var(--card-trans-full) 30%, var(--card-trans-full) 100%);
+  }
+
+  > svg,
+  > button {
+    @include central-y();
+    z-index: 5;
+  }
+}
+
+.label {
+  display: block;
+  margin-bottom: 1rem;
+
+  @include landscape() {
+    margin-bottom: 1.5rem;
+  }
+}
+
+input,
+textarea,
+select,
+.form__date {
+  background-color: var(--card-colour);
+  color: var(--text-colour);
+  border: 0.2rem solid var(--grey);
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 1.2rem 2rem;
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:hover {
+      border-color: var(--grey);
+    }
+  }
+
+  &:hover {
+    border-color: var(--grey-dark);
+  }
+
+  &:focus {
+    border-color: var(--grey);
+  }
+
+  &[type="password"] {
+    font-family: caption;
+    letter-spacing: 0.2rem;
+    padding: 1.3rem 2rem 1.1rem;
+  }
+
+  @include landscape() {
+    padding: 1.6rem 2rem 1.5rem;
+
+    &[type="password"] {
+      padding: 1.7rem 2rem 1.4rem;
+    }
+  }
+}
+
+.form__date {
+  @include landscape() {
+    padding: 1.4rem 2rem;
+  }
+}
+
+textarea {
+  min-height: 4.8rem;
+  resize: vertical;
+
+  @include landscape() {
+    min-height: 5.4rem;
+  }
+}
+
+select {
+  padding-right: 2rem;
+}
+
+form {
+  .react-date-picker__calendar,
+  .react-daterange-picker__calendar,
+  .react-calendar {
+    width: 30.8rem;
+    background-color: var(--transparent);
+
+    @include below-mobile() {
+      width: calc(100vw - calc(2 * var(--gutter)));
+
+      button {
+        min-width: 3.7rem;
+      }
+    }
+
+    @include landscape() {
+      width: 36.4rem;
+    }
+  }
+
+  .react-date-picker {
+    width: 100%;
+    padding: 1rem 0 0.8rem;
+
+    &__calendar {
+      z-index: 5;
+      margin-left: -0.2rem;
+      transition: opacity 0.15s ease;
+      @include w-c-o();
+
+      &--open {
+        opacity: 0.999;
+        pointer-events: all;
+      }
+
+      &--closed {
+        opacity: 0.001;
+        pointer-events: none;
+      }
+
+      @include below-mobile() {
+        width: calc(100% + 0.4rem);
+      }
+    }
+
+    &:hover {
+      border-color: var(--faint);
+    }
+
+    &__wrapper {
+      border: none;
+    }
+
+    &__inputGroup {
+      @include flex();
+      justify-content: flex-start;
+      padding: 0;
+
+      &__input:invalid {
+        background-color: var(--transparent);
+      }
+    }
+
+    .react-calendar {
+      border-color: var(--faint);
+    }
+  }
+
+  .react-date-picker__calendar,
+  .react-daterange-picker__calendar {
+    .react-calendar {
+      overflow: hidden;
+    }
+  }
+
+  .react-calendar {
+    @include montserrat();
+    background-color: var(--grey-darker);
+    border-radius: 0.5rem;
+
+    &__month-view__days__day,
+    &__navigation__prev-button,
+    &__navigation__prev2-button,
+    &__navigation__next-button,
+    &__navigation__next2-button {
+      border-left: 0.1rem solid var(--grey-darker);
+      border-right: 0.1rem solid var(--grey-darker);
+    }
+
+    &__month-view__days__day {
+      background-color: var(--grey-dark);
+      border-top: 0.2rem solid var(--grey-darker);
+      color: var(--white);
+
+      &:nth-of-type(7n - 6) {
+        border-left: 0;
+      }
+
+      &:nth-of-type(7n - 7) {
+        border-right: 0;
+      }
+
+      @include all() {
+        font-size: 1.2rem;
+      }
+
+      &--neighboringMonth {
+        background-color: var(--transparent);
+      }
+    }
+
+    &__month-view__weekdays {
+      text-transform: none;
+      border: none;
+      @include weight-regular();
+
+      &__weekday {
+        @include visually-hidden();
+      }
+
+      abbr {
+        text-decoration: none;
+      }
+    }
+
+    &__tile,
+    &__navigation button {
+      min-width: 3.7rem;
+      min-height: 3.7rem;
+
+      @include mobile() {
+        min-width: 4.4rem;
+        min-height: 4.4rem;
+      }
+
+      @include landscape() {
+        min-width: 5.2rem;
+        min-height: 5.2rem;
+      }
+
+      &:enabled {
+        transition: background-color 0.2s ease;
+
+        &:hover {
+          transition-duration: 0s;
+        }
+      }
+
+      &[disabled] {
+        opacity: 0.1;
+        background-color: var(--grey-darkest);
+      }
+    }
+
+    &__tile {
+      &:enabled {
+        &:focus {
+          background-color: var(--grey-darkest);
+          color: var(--white);
+        }
+
+        &:hover {
+          background-color: var(--white);
+          color: var(--grey-darkest);
+        }
+      }
+
+      &--active,
+      &.react-calendar__tile--active:focus,
+      &--hover {
+        background-color: var(--blue);
+      }
+
+      &--hoverEnd {
+        background-color: var(--white);
+        color: var(--blue-dark);
+      }
+
+      &--rangeStart,
+      &--rangeEnd {
+        &:enabled:hover {
+          background-color: var(--blue);
+          color: var(--white);
+        }
+      }
+    }
+
+    &__navigation {
+      &__label {
+        font-weight: var(--semibold);
+        color: var(--white);
+        pointer-events: none;
+
+        @include all() {
+          font-size: 1.4rem;
+        }
+      }
+
+      &__prev-button,
+      &__next-button,
+      &__prev2-button,
+      &__next2-button {
+        position: relative;
+        @include pseudo();
+        text-indent: -99999rem;
+
+        &:before,
+        &:after {
+          @include central();
+          background: url('./../../../assets/icons/arrow.svg') center center no-repeat;
+          background-size: 100% auto;
+          width: 1rem;
+          height: 2rem;
+        }
+
+        &:before {
+          min-width: auto;
+        }
+
+        &:hover {
+          background-color: var(--grey-dark);
+        }
+      }
+
+      &__prev-button,
+      &__next-button {
+        &:before {
+          @include central();
+        }
+
+        &:after {
+          content: none;
+        }
+      }
+
+      &__prev-button,
+      &__prev2-button {
+        &.react-calendar__navigation__arrow {
+          border-left-width: 0;
+
+          &:before,
+          &:after {
+            transform: rotate(180deg) translate(-50%, -50%);
+            transform-origin: 0 0;
+          }
+        }
+      }
+
+      &__prev2-button,
+      &__next2-button {
+        display: none;
+
+        &:before {
+          margin-left: -0.5rem;
+        }
+
+        &:after {
+          margin-left: 0.5rem;
+        }
+      }
+
+      &__next-button,
+      &__next2-button {
+        border-right-width: 0;
+      }
+    }
+  }
+
+  .show-year {
+    .react-calendar__navigation {
+      &__prev2-button,
+      &__next2-button {
+        display: block;
+      }
+
+      &__prev-button {
+        border-left-width: 0.1rem;
+      }
+
+      &__next-button {
+        border-right-width: 0.1rem;
+      }
+    }
+  }
+}

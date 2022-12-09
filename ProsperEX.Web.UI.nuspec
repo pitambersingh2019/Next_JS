@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+	<metadata>
+		<id>ProsperEX.Web.UI</id>
+		<title>ProsperEX Website</title>
+		<version>1.0.0</version>
+		<authors>Absurd</authors>
+		<owners>Absurd</owners>
+		<licenseUrl>https://www.prosperex.com.au</licenseUrl>
+		<projectUrl>https://www.prosperex.com.au</projectUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>A Next.js website</description>
+	</metadata>
+	<files>
+		<file src=".next\**\" target=".next"/>
+		<file src="node_modules\**\" target="node_modules"/>
+		<file src="pages\**\" target="pages"/>
+		<file src="public\**\" target="public"/>
+		<file src="build.env" target=""/>
+		<file src="next.config.js" target=""/>
+		<file src="startservice.cmd" target=""/>
+		<file src="server.js" target=""/>
+		<file src="iisnode.yml" target=""/>
+		<file src="web.config" target=""/>
+		<file src="web.Staging.config" target=""/>
+	</files>
+</package>

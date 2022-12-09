@@ -1,0 +1,33 @@
+@import '_styles/mixins/breakpoints';
+
+.root {
+  @include desktop {
+    padding-top: 14.5rem;
+  }
+}
+
+.holder {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &:first-child {
+      text-align: center;
+    }
+  }
+
+  @include portrait() {
+    margin: 0 auto;
+    max-width: 69rem;
+  }
+
+  @include landscape() {
+    width: calc(100vw - calc(6 * var(--col)) - calc(6 * var(--gap)));
+  }
+
+  @include max() {
+    width: 69rem;
+  }
+}

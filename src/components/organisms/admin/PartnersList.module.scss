@@ -1,0 +1,69 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/interaction';
+@import '_styles/mixins/type';
+
+.root {
+  position: relative;
+
+  h1 {
+    @include weight-regular();
+    font-size: 1.6rem;
+    margin-bottom: 4rem;
+
+    @include landscape() {
+      font-size: 1.8rem;
+    }
+  }
+
+  figure {
+    @include below-landscape {
+      max-height: 30rem;
+      overflow: hidden;
+    }
+  }
+}
+
+.grid {
+  @include grid-even(1, var(--gap));
+  padding: 4rem 0;
+  border-bottom: 0.2rem solid var(--border);
+
+  &:first-of-type {
+    padding-top: 0;
+  }
+
+  &:last-of-type {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  @include landscape() {
+    @include grid-even(2, var(--gap));
+  }
+}
+
+.content {
+  h2 {
+    font-size: 1.4rem;
+    margin-bottom: var(--margin);
+
+    @include landscape() {
+      font-size: 1.6rem;
+    }
+  }
+
+  p {
+    @include all() {
+      margin: 0 0 2rem;
+
+      &:last-of-type {
+        margin: 0;
+      }
+    }
+  }
+
+  a {
+    @include link-underline('blue-light', 'blue', 'white');
+  }
+}

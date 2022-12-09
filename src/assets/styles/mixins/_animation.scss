@@ -1,0 +1,33 @@
+@mixin hwa() {
+  // 3D rendering on GPU
+  transform: translateZ(0);
+
+  // fix chrome and safari flicker
+  backface-visibility: hidden;
+  perspective: 1000;
+
+  // webkit-powered
+  transform: translate3d(0, 0, 0);
+}
+
+@mixin w-c-o() {
+  will-change: opacity;
+}
+
+@mixin w-c-t() {
+  will-change: transform;
+}
+
+@mixin w-c-o-t() {
+  will-change: opacity, transform;
+}
+
+@mixin anim-alpha-init() {
+  opacity: 0.001;
+  visibility: hidden;
+}
+
+@mixin anim-prep-alpha() {
+  @include anim-alpha-init();
+  @include w-c-o();
+}

@@ -1,0 +1,31 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/type';
+@import '_styles/mixins/interaction';
+
+.root {
+  padding: 2rem 0;
+  bottom: 2rem;
+  left: 2rem;
+  color: var(--white);
+
+  > div {
+    &:first-of-type {
+      padding: 0 2rem;
+    }
+
+    &:last-of-type {
+      @include flex();
+      flex-wrap: wrap;
+      justify-content: center;
+
+      button {
+        margin: 2rem 2.5rem  0;
+
+        &:first-of-type {
+          @include text-hover-none();
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+
+.root > section {
+  max-width: 88rem;
+}
+
+.grid {
+  @include portrait() {
+    @include grid-cols(2);
+  }
+
+  @include landscape() {
+    @include grid-cols(4);
+    grid-gap: 3rem 2rem;
+  }
+}
+
+.actions {
+  @include flex();
+  flex-wrap: wrap;
+
+  button[type] {
+    @include all() {
+      margin-top: 4rem;
+    }
+  }
+}

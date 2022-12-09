@@ -1,0 +1,53 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+
+.root {
+  overflow: hidden;
+
+  figure + div,
+  figure + table {
+    + table {
+      margin-top: 6rem;
+    }
+
+    ~ table:last-of-type {
+      margin-bottom: 2rem;
+    }
+
+    + nav + table {
+      margin-top: 4rem;
+    }
+  } 
+}
+
+.listing {
+  td,
+  th {
+    &:nth-of-type(2) {
+      @include below-mobile() {
+        display: none;
+      }
+    }
+  }
+}
+
+.pagination {
+  margin: 2rem 0 0 var(--offset);
+}
+
+.slider {
+  @include slider();
+  overflow: hidden;
+
+  > div > div > div {
+    width: 100%;
+  }
+}
+
+.slide {
+  width: 100%;
+}
+
+.actions {
+  padding-left: var(--padding);
+}

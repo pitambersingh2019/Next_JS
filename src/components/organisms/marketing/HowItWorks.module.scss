@@ -1,0 +1,182 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+
+.root {
+  padding: 6rem 0 10rem;
+
+  @include portrait() {
+    padding: 7.5rem 0 15rem;
+  }
+
+  @include desktop() {
+    padding-bottom: 20rem;
+  }
+}
+
+.intro {
+  @include desktop() {
+    padding-left: calc(var(--col) + var(--gap));
+  }
+
+  @include max() {
+    padding-left: 12.5rem;
+  }
+}
+
+.grid {
+  margin-top: 6rem;
+
+  @include portrait() {
+    margin-top: 8rem;
+  }
+
+  @include desktop() {
+    margin-top: 10rem;
+    @include grid-even(3, 9rem);
+  }
+}
+
+.item {
+  text-align: center;
+  width: 100%;
+  max-width: 42rem;
+
+  &:nth-of-type(even) {
+    margin-left: auto;
+  }
+
+  &:not(:first-of-type) {
+    margin-top: 3rem;
+
+    @include portrait() {
+      margin-top: 4rem;
+    }
+
+    @include desktop() {
+      margin-top: 0;
+    }
+  }
+
+  &:first-of-type {
+    header {
+      background-color: var(--blue-light);
+    }
+
+    div {
+      @include before();
+
+      &:before {
+        width: 200vw;
+        height: 200vh;
+        top: 0;
+        left: -100vw;
+        background-color: var(--blue-light);
+        opacity: 0.06;
+      }
+    }
+  }
+
+  &:nth-of-type(2) {
+    @include desktop() {
+      margin-top: 5rem;
+    }
+
+    header {
+      background-color: var(--green);
+    }
+  }
+
+  &:nth-of-type(3) {
+    header {
+      background-color: var(--orange);
+    }
+  }
+
+  @include portrait() {
+    width: 58%;
+    max-width: 52rem;
+    min-width: 38rem;
+  }
+
+  @include desktop() {
+    width: 100%;
+    max-width: none;
+    min-width: auto;
+  }
+}
+
+.header,
+.image {
+  border-radius: 1rem 1rem 0 0;
+}
+
+.header {
+  position: relative;
+  color: var(--white);
+  padding: 6.5rem 2rem;
+
+  @include portrait() {
+    padding: 6.5rem 3rem;
+  }
+
+  @include landscape() {
+    padding: 8.5rem 4rem;
+  }
+
+  h3 {
+    position: relative;
+  }
+}
+
+.image {
+  @include absolute-cover();
+  opacity: 0.1;
+}
+
+.body {
+  position: relative;
+  @include col();
+  justify-content: center;
+  padding: 3rem 2rem;
+  min-height: 10.5rem;
+  @include after();
+
+  &:after {
+    border-radius: 0 0 1rem 1rem;
+    @include absolute-cover();
+    background-color: var(--white);
+  }
+
+  @include portrait() {
+    padding: 3rem 4rem;
+  }
+
+  @include landscape() {
+    padding: 3.5rem 4rem;
+  }
+
+  h4,
+  p {
+    position: relative;
+    z-index: 5;
+  }
+
+  h4 {
+    color: var(--grey-dark);
+    background-color: var(--white);
+    padding: 0.7rem 2.5rem;
+    min-height: 3.6rem;
+    border-radius: 1rem;
+    position: absolute;
+    top: -1.8rem;
+    @include central-x();
+  }
+
+  p {
+    margin: 0;
+
+    @include landscape() {
+      margin: 0;
+    }
+  }
+}

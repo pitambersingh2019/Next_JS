@@ -1,0 +1,45 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+
+.root {
+  @include landscape() {
+    grid-template-columns: minmax(1rem, 1fr) 20rem;
+  }
+}
+
+.advert,
+.survey {
+  @include landscape() {
+    grid-row: 1 / 2;
+  }
+}
+
+.advert {
+  @include landscape() {
+    width: 100%;
+    margin: 0;
+    grid-column: 2 / 3;
+  }
+}
+
+.card {
+  @include all() {
+    padding: 0;
+  }
+
+  h1 {
+    @include visually-hidden();
+  }
+}
+
+.wrapper {
+  position: relative;
+}
+
+.anonymous {
+  margin-bottom: 0;
+
+  li {
+    margin: 0;
+  }
+}

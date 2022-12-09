@@ -1,0 +1,73 @@
+@mixin rtl() {
+  [dir="rtl"] & {
+    @content;
+  }
+}
+
+@mixin switch-text() {
+  @include rtl() {
+    text-align: right;
+  }
+}
+
+@mixin switch-rtl($distance: 0) {
+  $formatted: $distance;
+
+  @if not (str-index('#{$distance}', 'rem')) and not (str-index('#{$distance}', 'auto')) and not (str-index('#{$distance}', 'var(--')) {
+    $formatted: #{$distance}rem;
+  }
+
+  @include rtl() {
+    right: auto;
+    left: $formatted;
+  }
+}
+
+@mixin switch-ltr($distance: 0) {
+  $formatted: $distance;
+
+  @if not (str-index('#{$distance}', 'rem')) and not (str-index('#{$distance}', 'auto')) and not (str-index('#{$distance}', 'var(--')) {
+    $formatted: #{$distance}rem;
+  }
+
+  @include rtl() {
+    left: auto;
+    right: $formatted;
+  }
+}
+
+@mixin switch-pad($left: 0, $right: 0) {
+  $formattedLeft: $left;
+  $formattedRight: $right;
+
+  @if not (str-index('#{$left}', 'rem')) and not (str-index('#{$left}', 'auto')) and not (str-index('#{$left}', 'var(--')) {
+    $formattedLeft: #{$left}rem;
+  }
+
+  @if not (str-index('#{$right}', 'rem')) and not (str-index('#{$right}', 'auto')) and not (str-index('#{$right}', 'var(--')) {
+    $formattedRight: #{$right}rem;
+  }
+
+  @include rtl() {
+    padding-left: $formattedLeft;
+    padding-right: $formattedRight;
+  }
+}
+
+@mixin switch-mar($left: 0, $right: 0) {
+  $formattedLeft: $left;
+  $formattedRight: $right;
+
+  @if not (str-index('#{$left}', 'rem')) and not (str-index('#{$left}', 'auto')) and not (str-index('#{$left}', 'var(--')) {
+    $formattedLeft: #{$left}rem;
+  }
+
+  @if not (str-index('#{$right}', 'rem')) and not (str-index('#{$right}', 'auto')) and not (str-index('#{$right}', 'var(--')) {
+    $formattedRight: #{$right}rem;
+  }
+
+  @include rtl() {
+    margin-left: $formattedLeft;
+    margin-right: $formattedRight;
+  }
+}

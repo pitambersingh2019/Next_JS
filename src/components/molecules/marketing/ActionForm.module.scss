@@ -1,0 +1,104 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/interaction';
+@import '_styles/mixins/type';
+
+.root {
+  > div {
+    @include col();
+  }
+
+  h1,
+  h2,
+  p {
+    text-align: center;
+  }
+
+  h2,
+  a {
+    margin-top: 2rem;
+  }
+
+  @include portrait() {
+    p,
+    a {
+      margin-top: 3rem;
+    }
+  }
+}
+
+.titled {
+  @include desktop() {
+    padding: 11.5rem 0 15rem;
+  }
+}
+
+.holder {
+  margin-top: 4rem;
+
+  @include portrait() {
+    margin: 6rem auto 0;
+    max-width: 40rem;
+  }
+
+  > div {
+    > aside,
+    > form {
+      @include col();
+    }
+
+    > form {
+      fieldset {
+        width: 100%;
+      }
+
+      a {
+        text-align: center;
+      }
+
+      button {
+        @include portrait() {
+          margin-top: 6rem;
+        }
+
+        @include landscape() {
+          margin-top: 8rem;
+        }
+      }
+    }
+  }
+}
+
+.single {
+  @include landscape() {
+    max-width: 44rem;
+
+    form fieldset > div {
+      @include grid-cols(1);
+    }
+  }
+
+  @include desktop() {
+    max-width: none;
+    width: calc(100% - calc(8 * var(--col)) - calc(8 * var(--gap)));
+  }
+
+  @include max() {
+    width: 44rem;
+  }
+}
+
+.double {
+  @include landscape() {
+    max-width: 94rem;
+  }
+
+  @include desktop() {
+    max-width: none;
+    width: calc(100% - calc(4 * var(--col)) - calc(4 * var(--gap)));
+  }
+
+  @include max() {
+    width: 94rem;
+  }
+}

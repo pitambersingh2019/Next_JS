@@ -1,0 +1,34 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+
+.root {
+  padding: 0 3rem 4rem;
+
+  @include portrait() {
+    padding: 0 5rem 5rem;
+  }
+
+  ul {
+    @include grid-even(2, 3rem);
+
+    @include portrait() {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+
+      li:not(:last-of-type) {
+        margin-right: 5rem;
+      }
+    }
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+}
+
+.resend {
+  @include below-portrait() {
+    grid-column: 1 / 3;
+  }
+}

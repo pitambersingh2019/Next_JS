@@ -1,0 +1,7 @@
+@import '_styles/mixins/layouts';
+
+.root {
+  ul {
+    @include flex();
+  }
+}

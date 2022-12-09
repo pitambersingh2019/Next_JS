@@ -1,0 +1,59 @@
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/animation';
+
+.root {
+  position: relative;
+  width: 9rem;
+  height: 9rem;
+}
+
+.chart {
+  text-indent: -99999rem;
+  width: 9rem;
+  height: 9rem;
+  background: var(--green);
+  border-radius: 50%;
+  opacity: 0.001;
+  transform: rotate(-360deg);
+  transition: opacity 1s ease, transform 1s ease;
+  @include w-c-o-t();
+
+  @supports (background: conic-gradient(#eee, #bbb)) {
+    background: conic-gradient(var(--transparent) 0deg, var(--green) var(--degree), var(--transparent) var(--degree) 360deg);
+  }
+}
+
+.inner {
+  position: absolute;
+  @include central();
+  @include col();
+  justify-content: center;
+  width: calc(100% - 0.8rem);
+  height: calc(100% - 0.8rem);
+  background-color: var(--card-colour);
+  border-radius: 50%;
+
+  h2,
+  span {
+    opacity: 0.001;
+    @include w-c-o();
+    transition: opacity 1s ease 0.4s;
+  }
+
+  span {
+    font-size: 1rem;
+    margin-top: -0.5rem;
+  }
+}
+
+.shown {
+  figure,
+  h2,
+  span {
+    opacity: 0.999;
+  }
+
+  figure {
+    transform: rotate(0deg);
+  }
+}

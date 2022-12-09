@@ -1,0 +1,103 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+
+.root {
+  position: relative;
+
+  > p {
+    @include all() {
+      margin: 0 0 var(--margin);
+    }
+  }
+
+  fieldset:not(:first-of-type) {
+    @include all() {
+      margin-top: 0;
+    }
+  }
+
+  article {
+    @include landscape() {
+      grid-column: 1 / 3;
+    }
+  }
+}
+
+.wrapper {
+  margin-top: var(--margin);
+  position: relative;
+  width: 100%;
+}
+
+.topics {
+  margin-bottom: var(--padding);
+
+  label {
+    @include portrait() {
+      max-width: 30rem;
+    }
+  }
+}
+
+.body,
+.return,
+.actions {
+  @include border-horizontal();
+
+  &:before {
+    width: calc(100% + calc(2 * var(--padding)));
+    top: 0;
+    bottom: unset;
+    left: calc(-1 * var(--padding));
+  }
+}
+
+.actions {
+  button[type="submit"] {
+    @include all() {
+      margin-top: var(--margin);
+    }
+  }
+}
+
+.questions {
+  > div {
+    width: calc(100% + calc(2 * var(--padding)));
+    margin-left: calc(-1 * var(--padding));
+    padding: 0 var(--padding);
+    position: relative;
+    @include before();
+
+    &:before {
+      @include absolute-cover();
+      background-color: var(--transparent);
+      transition: 0.2s ease background-color;
+      will-change: background-color;
+    }
+
+    &:nth-of-type(even):before {
+      background-color: var(--row);
+    }
+  }
+}
+
+.add,
+.return,
+.recipients {
+  padding: var(--padding) 0;
+}
+
+.choices {
+  @include portrait() {
+    grid-column: 1 / 3;
+  }
+}
+
+.disabled {
+  opacity: 0.5;
+}
+
+.saved {
+  color: var(--green);
+  margin-top: 2rem;
+}

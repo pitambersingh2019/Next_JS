@@ -1,0 +1,28 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+
+.root {
+  h3 {
+    margin-bottom: 2rem;
+  }
+
+  label {
+    @include all() {
+      margin-top: 0;
+    }
+  }
+}
+
+.list {
+  margin: 1rem 0 1rem 4.4rem;
+  padding: 1rem 2rem;
+  border: 0.2rem solid var(--grey-dark);
+  border-radius: 0.5rem;
+  max-width: 51rem;
+  max-height: 33rem;
+  overflow-x: auto;
+
+  > span {
+    @include visually-hidden();
+  }
+}

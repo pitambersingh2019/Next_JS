@@ -1,0 +1,45 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/interaction';
+@import '_styles/mixins/type';
+
+.root {
+  padding: 10rem 0;
+  position: relative;
+  @include before();
+
+  &:before {
+    width: calc(100% - calc(2 * var(--gutter)));
+    top: 0;
+    left: var(--gutter);
+    border-top: 0.2rem solid var(--grey-light);
+  }
+
+  @include portrait() {
+    padding: 12rem 0 15rem;
+  }
+
+  @include desktop() {
+    padding: 15rem 0 20rem;
+
+    &:before {
+      width: 84rem;
+      @include central-x();
+    }
+  }
+
+  > div {
+    @include col();
+  }
+
+  h2,
+  p {
+    text-align: center;
+  }
+
+  a {
+    color: var(--blue);
+    @include weight-medium();
+    @include link-underline('blue', 'blue-light', 'black');
+  }
+}

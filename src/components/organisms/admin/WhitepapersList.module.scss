@@ -1,0 +1,79 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/interaction';
+@import '_styles/mixins/type';
+
+.root {
+  position: relative;
+
+  h1 {
+    @include weight-regular();
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+
+    @include landscape() {
+      font-size: 1.8rem;
+    }
+  }
+
+  p {
+    margin-bottom: 4rem;
+  }
+}
+
+.grid {
+  @include grid-even(1, 0);
+
+  @include landscape() {
+    @include grid-even(2, 0);
+  }
+}
+
+.card {
+  color: var(--white);
+  padding: 2rem 0;
+  border-bottom: 0.2rem solid var(--border);
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+
+  @include landscape() {
+    padding: 4rem;
+
+    &:first-of-type,
+    &:nth-of-type(2) {
+      padding-top: 0;
+    }
+
+    &:last-of-type,
+    &:nth-last-of-type(2) {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    &:nth-of-type(odd) {
+      border-right: 0.2rem solid var(--border);
+      padding-left: 0;
+    }
+
+    &:nth-of-type(even) {
+      padding-right: 0;
+    }
+  }
+
+  h2 {
+    color: inherit;
+    @include link-underline('blue-light', 'blue', 'white');
+  }
+
+  p {
+    @include all() {
+      margin: 1rem 0 0 0;
+
+      &:last-of-type {
+        margin: 2.5rem 0 0 0;
+      }
+    }
+  }
+}

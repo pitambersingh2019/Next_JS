@@ -1,0 +1,42 @@
+@import '_styles/mixins/layouts';
+
+.root {
+  @include flex();
+  flex-wrap: wrap;
+  margin: 1.5rem 0 3rem;
+  color: var(--grey-dark);
+
+  li {
+    margin: 0 2.5rem 1rem 0;
+    padding-left: 2rem;
+    position: relative;
+    line-height: 1.6rem;
+    @include before();
+
+    &:before {
+      @include central-y();
+      left: 0;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: 100% auto;
+    }
+  }
+}
+
+.category:before {
+  width: 1rem;
+  height: 1rem;
+  background-image: url('./../../../assets/icons/icon-category.svg');
+}
+
+.anonymous:before {
+  width: 1.4rem;
+  height: 1.1rem;
+  background-image: url('./../../../assets/icons/icon-anonymous.svg');
+}
+
+.date:before {
+  width: 1.2rem;
+  height: 1.2rem;
+  background-image: url('./../../../assets/icons/icon-date--grey.svg');
+}

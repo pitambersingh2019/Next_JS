@@ -1,0 +1,507 @@
+{
+  "summary": {
+    "list": [
+      {
+        "id": "1",
+        "name": "First quarterly employee survey, 2021",
+        "status": "Active",
+        "responseRate": 90,
+        "createdBy": null
+      },
+      {
+        "id": "2",
+        "name": "Employee Onboarding",
+        "status": "Draft",
+        "responseRate": 0,
+        "createdBy": "Prosper EX"
+      },
+      {
+        "id": "3",
+        "name": "Customer Voice",
+        "status": "Active",
+        "responseRate": 82,
+        "createdBy": "Prosper EX"
+      },
+      {
+        "id": "4",
+        "name": "Feedback - Q4, 2020",
+        "status": "Ended",
+        "responseRate": 60,
+        "createdBy": null
+      },
+      {
+        "id": "5",
+        "name": "Employee Voice",
+        "status": "Draft",
+        "responseRate": 0,
+        "createdBy": "Prosper EX"
+      },
+      {
+        "id": "6",
+        "name": "Employee Exit",
+        "status": "Ended",
+        "responseRate": 64,
+        "createdBy": "Prosper EX"
+      },
+      {
+        "id": "7",
+        "name": "Employee Engagement Survey",
+        "status": "Active",
+        "responseRate": 77,
+        "createdBy": "Prosper EX"
+      },
+      {
+        "id": "8",
+        "name": "Future of Work",
+        "status": "Draft",
+        "responseRate": 0,
+        "createdBy": "Prosper EX"
+      },
+      {
+        "id": "9",
+        "name": "Product Development",
+        "status": "Ended",
+        "responseRate": 89,
+        "createdBy": "Prosper EX"
+      }
+    ]
+  },
+  "results": {
+    "name": "First quarterly employee survey, 2021",
+    "description": "Q1 Survey results - focusing on employee happiness, wellbeing and motivation across the business",
+    "responseRate": 72,
+    "recipientTotal": 12,
+    "haveResponded": [
+      "Sam Gooch", 
+      "Billy Watson",
+      "Ben Hirst",
+      "Rowan Cavanagh",
+      "Danielle Warner",
+      "Oli Taylor", 
+      "Oliver Bailey", 
+      "Heather Body",
+      "James McSweeney"
+    ],
+    "notResponded": [
+      "Tom Thumb",
+      "Sean Bean",
+      "Dick van Dyke"
+    ],
+    "responses": [
+      {
+        "question": "How much are you currently enjoying your role?",
+        "type": 1,
+        "answers": [{
+          "text": "Not so much",
+          "totalAnswered": 4
+        }, {
+          "text": "Somewhat",
+          "totalAnswered": 87
+        }, {
+          "text": "Very much",
+          "totalAnswered": 9
+        }]
+      },
+      {
+        "question": "What is the main area management need to improve on this?",
+        "type": 1,
+        "answers": [{
+          "text": "More support from my line manager",
+          "totalAnswered": 0
+        }, {
+          "text": "More transparency from management",
+          "totalAnswered": 28
+        }, {
+          "text": "Ability to give my opinions and suggestions",
+          "totalAnswered": 60
+        }, {
+          "text": "More realistic deadlines",
+          "totalAnswered": 12
+        }]
+      },
+      {
+        "question": "How happy would you suggest your team is?",
+        "type": 6,
+        "answers": [{
+          "totalAnswered": 0
+        }, {
+          "totalAnswered": 0
+        }, {
+          "totalAnswered": 28
+        }, {
+          "totalAnswered": 60
+        },
+        {
+          "totalAnswered": 12
+        }]
+      },
+      {
+        "question": "What would you like from your line manager in the next quarter?",
+        "type": 3,
+        "answers": [
+          {
+            "text": "More time with them to discuss goals and objectives"
+          },
+          {
+            "text": "I want a clear road map of how I can get to the next level in my role"
+          },
+          {
+            "text": "I'd like more responsibility, I am not being tested enough"
+          },
+          {
+            "text": "I don;t see them enough, we are left to get on with things which is great but we do lack direction. And it would be great if they could get stuck in when we get busy, the team would learn a lot from them working along side us."
+          },
+          {
+            "text": "I would like to hear more about furture projects in the pipeline, rather than just when we are being briefed."
+          },
+          {
+            "text": "I'd like to start heping with pre sales, I believe there is a lot I can add to the business outside of my day to day role"
+          }
+        ]
+      },
+      {
+        "question": "Out of five, how likely would you recomnend working here to a friend?",
+        "type": 5,
+        "answers": [{
+          "label": "Very unlikely",
+          "totalAnswered": 0
+        }, {
+          "totalAnswered": 0
+        }, {
+          "totalAnswered": 4
+        }, {
+          "totalAnswered": 87
+        },
+        {
+          "label": "Very likely",
+          "totalAnswered": 9
+        }]
+      },
+      {
+        "question": "In no more than ten words, what do you enjoy about working here?",
+        "type": 2,
+        "answers": [
+          {
+            "text": "The people"
+          },
+          {
+            "text": "The culture"
+          },
+          {
+            "text": "The opportunities I am presented with"
+          },
+          {
+            "text": "The flexibility of working hours"
+          }, 
+          {
+            "text": "Remote working"
+          },
+          {
+            "text": "The managers are like friends"
+          }
+        ]
+      },
+      {
+        "question": "Which of these reasons made you want to join this company?",
+        "type": 4,
+        "answers": [{
+          "text": "The pay",
+          "totalAnswered": 28
+        }, {
+          "text": "The location",
+          "totalAnswered": 90
+        }, {
+          "text": "The product",
+          "totalAnswered": 50
+        }, {
+          "text": "The team",
+          "totalAnswered": 60
+        }]
+      }
+    ]
+  },
+  "individual": {
+    "1168": {
+      "responses": [ 
+        {
+          "question": "How much are you currently enjoying your role?",
+          "type": 1,
+          "answers": [{
+            "text": "Not so much"
+          }, {
+            "text": "Somewhat"
+          }, {
+            "text": "Very much",
+            "userAnswered": true
+          }]
+        },
+        {
+          "question": "What is the main area management need to improve on this?",
+          "type": 1,
+          "answers": [{
+            "text": "More support from my line manager"
+          }, {
+            "text": "More transparency from management",
+            "userAnswered": true
+          }, {
+            "text": "Ability to give my opinions and suggestions"
+          }, {
+            "text": "More realistic deadlines"
+          }]
+        },
+        {
+        "question": "How happy would you suggest your team is?",
+          "type": 6,
+          "answers": [{
+
+          }, {
+          
+          }, {
+          
+          }, {
+            "userAnswered": true
+          },
+          {
+
+          }]
+        },
+        {
+          "question": "What would you like from your line manager in the next quarter?",
+          "type": 3,
+          "answers": [
+            {
+              "text": "More time with them to discuss goals and objectives"
+            }
+          ]
+        },
+        {
+          "question": "Out of five, how would you rate the coffee?",
+          "type": 5,
+          "answers": [{
+            "label": "Terrible"
+          }, {
+
+          }, {
+            "userAnswered": true
+          }, {
+
+          },
+          {
+            "label": "Great"
+          }]
+        },
+        {
+          "question": "In no more than ten words, what do you enjoy about working here?",
+          "type": 2,
+          "answers": [
+            {
+              "text": "The people"
+            }
+          ]
+        },
+        {
+          "question": "Which of these reasons made you want to join this company?",
+          "type": 4,
+          "answers": [{
+            "text": "The pay"
+          }, {
+            "text": "The location",
+            "userAnswered": true
+          }, {
+            "text": "The product"
+          }, {
+            "text": "The team"
+          }]
+        }
+      ]
+    },
+    "1169": {
+      "responses": [ 
+        {
+          "question": "How much are you currently enjoying your role?",
+          "type": 1,
+          "answers": [{
+            "text": "Not so much"
+          }, {
+            "text": "Somewhat",
+            "userAnswered": true
+          }, {
+            "text": "Very much"
+          }]
+        },
+        {
+          "question": "What is the main area management need to improve on this?",
+          "type": 1,
+          "answers": [{
+            "text": "More support from my line manager"
+          }, {
+            "text": "More transparency from management",
+            "userAnswered": true
+          }, {
+            "text": "Ability to give my opinions and suggestions"
+          }, {
+            "text": "More realistic deadlines"
+          }]
+        },
+        {
+          "question": "How happy would you suggest your team is?",
+          "type": 6,
+          "answers": [{
+          
+          }, {
+            "userAnswered": true
+          }, {
+
+          }, {
+
+          },
+          {
+
+          }]
+        },
+        {
+          "question": "What would you like from your line manager in the next quarter?",
+          "type": 3,
+          "answers": [
+            {
+              "text": "I want a clear road map of how I can get to the next level in my role"
+            }
+          ]
+        },
+        {
+          "question": "Out of five, how would you rate the coffee?",
+          "type": 5,
+          "answers": [{
+            "label": "Terrible"
+          }, {
+            "userAnswered": true
+          }, {
+
+          }, {
+
+          },
+          {
+            "label": "Great"
+          }]
+        },
+        {
+          "question": "In no more than ten words, what do you enjoy about working here?",
+          "type": 2,
+          "answers": [
+            {
+              "text": "The culture"
+            }
+          ]
+        },
+        {
+          "question": "Which of these reasons made you want to join this company?",
+          "type": 4,
+          "answers": [{
+            "text": "The pay",
+            "userAnswered": true
+          }, {
+            "text": "The location"
+          }, {
+            "text": "The product"
+          }, {
+            "text": "The team"
+          }]
+        }
+      ]
+    },
+    "1170": {
+      "responses": [ 
+        {
+          "question": "How much are you currently enjoying your role?",
+          "type": 1,
+          "answers": [{
+            "text": "Not so much"
+          }, {
+            "text": "Somewhat",
+            "userAnswered": true
+          }, {
+            "text": "Very much"
+          }]
+        },
+        {
+          "question": "What is the main area management need to improve on this?",
+          "type": 1,
+          "answers": [{
+            "text": "More support from my line manager"
+          }, {
+            "text": "More transparency from management"
+          }, {
+            "text": "Ability to give my opinions and suggestions",
+            "userAnswered": true
+          }, {
+            "text": "More realistic deadlines"
+          }]
+        },
+        {
+          "question": "How happy would you suggest your team is?",
+          "type": 6,
+          "answers": [{
+          }, {
+
+          }, {
+
+          }, {
+
+          },
+          {
+            "userAnswered": true
+          }]
+        },
+        {
+          "question": "What would you like from your line manager in the next quarter?",
+          "type": 3,
+          "answers": [
+            {
+              "text": "I'd like more responsibility, I am not being tested enough"
+            }
+          ]
+        },
+        {
+          "question": "Out of five, how would you rate the coffee?",
+          "type": 5,
+          "answers": [{
+            "label": "Terrible"
+          }, {
+
+          }, {
+
+          }, {
+
+          },
+          {
+            "label": "Great",
+            "userAnswered": true
+          }]
+        },
+        {
+          "question": "In no more than ten words, what do you enjoy about working here?",
+          "type": 2,
+          "answers": [
+            {
+              "text": "The flexibility of working hours"
+            }
+          ]
+        },
+        {
+          "question": "Which of these reasons made you want to join this company?",
+          "type": 4,
+          "answers": [{
+            "text": "The pay"
+            }, {
+            "text": "The location"
+            }, {
+            "text": "The product"
+            }, {
+            "text": "The team",
+            "userAnswered": true
+          }]
+        }
+      ]
+    }
+  }
+}

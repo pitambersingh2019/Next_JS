@@ -1,0 +1,60 @@
+@import '_styles/mixins/layouts';
+
+.root {
+  position: relative;
+  z-index: 10;
+
+  > div {
+    width: 100%;
+    @include flex();
+
+    > div {
+      outline: 0 !important;
+      position: unset;
+
+      > div {
+        outline: 0 !important;
+        min-width: 8rem;
+        background-color: var(--transparent) !important;
+        height: 4.7rem;
+        padding: 1.5rem 2rem;
+        border-radius: 0.5rem;
+
+        > div {
+          margin-left: 0 !important;
+
+          &:last-child {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  svg {
+    z-index: 5;
+    right: auto;
+    left: 5.8rem;
+  }
+
+  input {
+    padding-left: 8rem !important;
+    position: absolute !important;
+    width: 100%;
+    left: 0;
+  }
+
+  ul {
+    width: 100%;
+    z-index: unset;
+    margin-top: -0.2rem;
+
+    li {
+      padding: 1.5rem 2rem;
+
+      &:first-of-type {
+        padding-top: 1.7rem;
+      }
+    }
+  }
+}

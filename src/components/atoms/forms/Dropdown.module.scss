@@ -1,0 +1,25 @@
+@import '_styles/mixins/type';
+
+.input {
+  text-transform: uppercase;
+  border-color: var(--transparent);
+  @include weight-medium();
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    border-color: var(--transparent);
+  }
+
+  & ~ svg {
+    top: 1.5rem;
+  }
+}
+
+.active {
+  @include weight-semibold();
+}
+
+.aligned {
+  text-align-last: right;
+}

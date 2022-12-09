@@ -1,0 +1,29 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+
+.graph {
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+
+    @include landscape() {
+      font-size: 1.4rem;
+    }
+  }
+
+  > div {
+    @include portrait() {
+      display: flex;
+
+      header {
+        padding-right: 3rem;
+        @include col();
+        align-items: flex-start;
+      }
+    }
+  }
+
+  figure {
+    width: 100%;
+  }
+}

@@ -1,0 +1,155 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/type';
+@import '_styles/mixins/interaction';
+
+.reporting {
+  margin: 2rem var(--padding);
+
+  &:nth-of-type(2) {
+    margin-left: 0;
+  }
+
+  @include portrait() {
+    margin-top: 0;
+    margin-bottom: var(--margin);
+  }
+}
+
+div.actions {
+  display: flex;
+  width: auto;
+}
+
+.filters {
+  width: 100%;
+  margin-bottom: var(--margin);
+  padding: 0 var(--padding);
+  @include border-horizontal();
+  display: flex;
+  align-items: flex-start;
+
+  small,
+  button {
+    white-space: pre;
+  }
+
+  small {
+    display: block;
+    margin-bottom: 2rem;
+    line-height: 2rem;
+    @include weight-semibold();
+
+    @include landscape() {
+      line-height: 2.2rem;
+      margin-top: 0.2rem;
+    }
+  }
+
+  ul {
+    margin-left: 4rem;
+    @include flex();
+    flex-wrap: wrap;
+  }
+
+  li {
+    margin: 0 4.2rem 2rem 0;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+
+.filter {
+  position: relative;
+  @include after();
+
+  &:after {
+    width: 0.8rem;
+    height: 0.8rem;
+    top: 0;
+    right: -1.2rem;
+    background: url('./../../../assets/icons/cross.svg') 0 0 no-repeat;
+    background-size: 100% auto;
+  }
+}
+
+.overview,
+.graph {
+  @include border-horizontal();
+}
+
+.overview {
+  @include landscape() {
+    @include grid-even(2, 5rem);
+  }
+}
+
+.graph,
+.trends,
+.list {
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+
+    @include landscape() {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.graph {
+  padding: 3rem var(--padding);
+
+  @include below-landscape() {
+    &:before {
+      width: calc(100% - calc(2 * var(--padding)));
+      left: var(--padding);
+    }
+  }
+
+  @include portrait() {
+    padding: 4rem var(--padding);
+  }
+
+  @include landscape() {
+    padding-right: 0;
+  }
+}
+
+.trends {
+  padding: 3rem 0;
+
+  @include portrait() {
+    padding: 5rem 0;
+  }
+
+  @include landscape() {
+    @include col();
+    justify-content: flex-start;
+    align-items: flex-start;
+    @include border-horizontal();
+
+    &:before {
+      height: calc(100% - 10rem);
+      bottom: 5rem;
+      border-bottom: 0;
+      width: 0;
+      border-left: 0.1rem solid var(--border);
+      z-index: 10;
+    }
+  }
+}
+
+.list {
+  padding-top: 3rem;
+
+  @include portrait() {
+    padding-top: 5rem;
+  }
+}
+
+.create {
+  margin-top: var(--padding);
+}

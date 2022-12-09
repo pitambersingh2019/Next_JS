@@ -1,0 +1,52 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/animation';
+@import '_styles/mixins/interaction';
+
+.root {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  > span {
+    margin: 0;
+  }
+
+  input {
+    @include visually-hidden();
+  }
+}
+
+.wrapper {
+  position: relative;
+  margin: 1.5rem 0;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+
+  @include portrait() {
+    width: 15rem;
+    height: 15rem;
+    margin: 2rem 0;
+  }
+
+  @include landscape() {
+    margin: 0 0 1.5rem;
+  }
+
+  ~ span {
+    cursor: pointer;
+  }
+}
+
+.avatar,
+.preview,
+.preview img {
+  @include absolute-cover();
+}
+
+.avatar {
+  @include image-feedback();
+}

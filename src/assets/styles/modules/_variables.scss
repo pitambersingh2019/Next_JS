@@ -1,0 +1,64 @@
+:root {
+  --blue: #2f63af;
+  --blue-light: #00bfe9;
+  --blue-pale: rgba(0, 191, 233, 0.06);
+  --blue-dark: rgba(33, 37, 44, 0.4);
+  --green: #17e69a;
+  --orange: #eb743b;
+  --ochre: #b04e41;
+  --yellow: #ffdd33;
+  --red: #ec3a3a;
+  --black: #21252c;
+  --border: #414a58;
+  --grey-darkest: #2b313b;
+  --grey-darker: #363e49;
+  --grey-dark: #757d8a;
+  --grey: #c9cbcf;
+  --grey-light: #f2f2f3;
+  --stripe: #fafafa;
+  --row: #303641;
+  --white: #fff;
+  --transparent: rgba(255, 255, 255, 0);
+  --fainter: rgba(255, 255, 255, 0.25);
+  --daterange-button-colour: var(--white);
+  --daterange-button-hover: var(--white);
+
+  --regular: 400;
+  --medium: 500;
+  --semibold: 600;
+
+  --padding: 3rem;
+  --padding-portrait: 4rem;
+  --padding-landscape: 5rem;
+
+  --margin: 3rem;
+  --margin-portrait: 4rem;
+
+  --gap: 3rem;
+  --gap-portrait: 4rem;
+  --gap-landscape: 6rem;
+
+  --gutter: 3rem;
+  --gutter-portrait: 6rem;
+  --gutter-landscape: 12rem;
+
+  --col: calc((100vw - var(--gap) - calc(var(--gutter) * 2)) / 2);
+
+  --pagination: -1.5rem;
+  --offset: calc(var(--padding) - 1.7rem);
+
+  @include portrait() {
+    --padding: var(--padding-portrait);
+    --margin: var(--margin-portrait);
+    --gap: var(--gap-portrait);
+    --gutter: var(--gutter-portrait);
+    --col: calc((100vw - calc(var(--gap) * 3) - calc(var(--gutter) * 2)) / 4);
+  }
+
+  @include landscape() {
+    --padding: var(--padding-landscape);
+    --gap: var(--gap-landscape);
+    --gutter: var(--gutter-landscape);
+    --col: calc((100vw - calc(var(--gap) * 11) - calc(var(--gutter) * 2)) / 12);
+  }
+}

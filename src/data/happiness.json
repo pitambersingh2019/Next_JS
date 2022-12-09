@@ -1,0 +1,296 @@
+{
+  "summary": {
+    "averageScore": 4.1,
+    "graph": {
+      "change": 0.5,
+      "yAxis": "scale",
+      "data": [
+        {
+          "date": "2020-07-24",
+          "score": 4
+        },
+        {
+          "date": "2020-07-31",
+          "score": 4.2
+        },
+        {
+          "date": "2020-08-07",
+          "score": 4.3
+        },
+        {
+          "date": "2020-08-14",
+          "score": 4.2
+        },
+        {
+          "date": "2020-08-21",
+          "score": 4
+        },
+        {
+          "date": "2020-08-28",
+          "score": 3.6
+        },
+        {
+          "date": "2020-09-04",
+          "score": 3.3
+        },
+        {
+          "date": "2020-09-11",
+          "score": 3.1
+        },
+        {
+          "date": "2020-09-18",
+          "score": 2.9
+        },
+        {
+          "date": "2020-09-25",
+          "score": 3.2
+        },
+        {
+          "date": "2020-10-02",
+          "score": 3.5
+        },
+        {
+          "date": "2020-10-09",
+          "score": 3.9
+        },
+        {
+          "date": "2020-10-16",
+          "score": 4.3
+        },
+        {
+          "date": "2020-10-23",
+          "score": 4.9
+        },
+        {
+          "date": "2020-10-30",
+          "score": 5
+        },
+        {
+          "date": "2020-11-06",
+          "score": 4.6
+        },
+        {
+          "date": "2020-11-13",
+          "score": 4
+        },
+        {
+          "date": "2020-11-20",
+          "score": 3.2
+        },
+        {
+          "date": "2020-11-27",
+          "score": 3.7
+        },
+        {
+          "date": "2020-12-04",
+          "score": 4
+        },
+        {
+          "date": "2020-12-11",
+          "score": 4.3
+        }
+      ]
+    },
+    "list": [
+      {
+        "id": "1",
+        "name": "Satisfaction survey",
+        "status": "Draft",
+        "averageScore": 0,
+        "responseRate": 0,
+        "createdBy": "Prosper EX"
+      },
+      {
+        "id": "2",
+        "name": "Happiness index - Q1, 2021",
+        "status": "Active",
+        "averageScore": 4.2,
+        "responseRate": 95,
+        "createdBy": "Prosper EX"
+      },
+      {
+        "id": "3",
+        "name": "Employee engagement survey",
+        "status": "Active",
+        "averageScore": 3.7,
+        "responseRate": 80,
+        "createdBy": null
+      },
+      {
+        "id": "4",
+        "name": "How is the new coffee machine?",
+        "status": "Ended",
+        "averageScore": 4.4,
+        "responseRate": 60,
+        "createdBy": null
+      }
+    ]
+  },
+  "results": {
+    "name": "Employee engagement survey",
+    "description": "Measuring employee engagement and happiness across the business",
+    "recipientTotal": 12,
+    "haveResponded": [
+      "Sam Gooch", 
+      "Billy Watson",
+      "Ben Hirst",
+      "Rowan Cavanagh",
+      "Danielle Warner",
+      "Oli Taylor", 
+      "Oliver Bailey", 
+      "Heather Body",
+      "James McSweeney"
+    ],
+    "notResponded": [
+      "Tom Thumb",
+      "Sean Bean",
+      "Dick van Dyke"
+    ],
+    "responses": [
+      {
+        "question": "How happy are you?",
+        "type": 6,
+        "answers": [{
+          "totalAnswered": 0
+        }, {
+          "totalAnswered": 0
+        }, {
+          "totalAnswered": 28
+        }, {
+          "totalAnswered": 60
+        },
+        {
+          "totalAnswered": 12
+        }]
+      },
+      {
+        "question": "Out of five, how would you rate the coffee?",
+        "type": 5,
+        "answers": [{
+          "label": "Terrible",
+          "totalAnswered": 0
+        }, {
+          "totalAnswered": 0
+        }, {
+          "totalAnswered": 4
+        }, {
+          "totalAnswered": 87
+        },
+        {
+          "label": "Great",
+          "totalAnswered": 9
+        }]
+      }
+    ]
+  },
+  "individual": {
+    "1168": {
+      "responses": [ 
+        {
+          "question": "How happy are you?",
+            "type": 6,
+            "answers": [{
+
+            }, {
+            
+            }, {
+            
+            }, {
+              "userAnswered": true
+            },
+            {
+
+            }]
+          },
+          {
+            "question": "Out of five, how would you rate the coffee?",
+            "type": 5,
+            "answers": [{
+              "label": "Terrible"
+            }, {
+
+            }, {
+              "userAnswered": true
+            }, {
+
+            },
+            {
+              "label": "Great"
+            }]
+          }
+      ]
+    },
+    "1169": {
+      "responses": [ 
+        {
+          "question": "How happy are you?",
+          "type": 6,
+          "answers": [{
+          
+          }, {
+            "userAnswered": true
+          }, {
+
+          }, {
+
+          },
+          {
+
+          }]
+        },
+        {
+          "question": "Out of five, how would you rate the coffee?",
+          "type": 5,
+          "answers": [{
+            "label": "Terrible"
+          }, {
+            "userAnswered": true
+          }, {
+
+          }, {
+
+          },
+          {
+            "label": "Great"
+          }]
+        }
+      ]
+    },
+    "1170": {
+      "responses": [
+        {
+          "question": "How happy are you?",
+          "type": 6,
+          "answers": [{
+          }, {
+
+          }, {
+
+          }, {
+
+          },
+          {
+            "userAnswered": true
+          }]
+        },
+        {
+          "question": "Out of five, how would you rate the coffee?",
+          "type": 5,
+          "answers": [{
+            "label": "Terrible"
+          }, {
+
+          }, {
+
+          }, {
+
+          },
+          {
+            "label": "Great",
+            "userAnswered": true
+          }]
+        }
+      ]
+    }
+  }
+}

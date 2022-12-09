@@ -1,0 +1,84 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/type';
+
+.root {
+  @include all() {
+    padding-bottom: 0;
+  }
+}
+
+.table {
+  margin-top: var(--margin);
+  padding-bottom: var(--padding);
+
+  p {
+    margin: 0 var(--padding);
+  }
+
+  th,
+  td {
+    min-width: 16rem;
+
+    &:first-of-type {
+      width: 100%;
+    }
+  }
+
+  td:first-of-type div:last-of-type {
+    display: none;
+    padding-top: 1rem;
+  }
+
+  @include below-portrait() {
+    th,
+    td {
+      &:last-of-type {
+        display: none;
+      }
+    }
+
+    td:first-of-type div:last-of-type {
+      display: block;
+    }
+  }
+}
+
+.actions {
+  button {
+    &:not(:first-of-type) {
+      margin-left: 2rem;
+    }
+
+    @include all() {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.add {
+  padding: var(--padding);
+  @include border-horizontal();
+
+  &:before {
+    top: 0;
+    bottom: unset;
+  }
+
+  h2 {
+    @include weight-semibold();
+    margin-bottom: var(--margin);
+  }
+
+  form {
+    @include all() {
+      button[type="submit"] {
+        margin-top: 4rem;
+      }
+    }
+
+    @include portrait() {
+      max-width: 48rem;
+    }
+  }
+}

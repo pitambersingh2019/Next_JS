@@ -1,0 +1,196 @@
+@mixin debug() {
+  background: rgba(255, 255, 0, 0.5);
+}
+
+@mixin central() {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin central-y() {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin central-x() {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin before() {
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+  }
+}
+
+@mixin after() {
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+  }
+}
+
+@mixin pseudo() {
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+  }
+}
+
+@mixin visually-hidden() {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 0.1rem;
+  width: 0.1rem;
+  margin: -0.1rem;
+  padding: 0;
+  border: 0;
+}
+
+@mixin modal-default() {
+  @include hwa();
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100vw - (100vw - 100%));
+  height: calc(100vh - calc(100vh - 100%));
+}
+
+@mixin modal() {
+  @include modal-default();
+  @include anim-prep-alpha();
+  transform: scale(1.1);
+  @include w-c-o-t();
+  overflow-y: auto;
+
+  * {
+    visibility: inherit !important;
+  }
+}
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+}
+
+@mixin col() {
+  @include flex();
+  flex-direction: column;
+}
+
+@mixin row() {
+  @include flex();
+}
+
+@mixin grid($gap: var(--gap)) {
+  display: grid;
+  grid-gap: $gap;
+}
+
+@mixin grid-cols($cols, $size: minmax(1rem, 1fr)) {
+  grid-template-columns: repeat(#{$cols}, #{$size});
+}
+
+@mixin grid-even($cols, $gap, $size: minmax(1rem, 1fr)) {
+  @include grid($gap);
+  @include grid-cols($cols, $size);
+}
+
+@mixin absolute-cover() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin aspect-ratio($aspect) {
+  @include before();
+
+  &:before {
+    padding-top: #{$aspect};
+    position: relative;
+  }
+
+  > * {
+    @include absolute-cover();
+  }
+}
+
+@mixin square-aspect() {
+  @include aspect-ratio(100%);
+}
+
+@mixin slider-div-layout() {
+  > div > div {
+    display: flex;
+
+    > div {
+      flex-shrink: 0;
+      height: auto;
+    }
+  }
+}
+
+@mixin slider-div-height() {
+  > div,
+  > div > div,
+  > div > div > div {
+    height: 100%;
+  }
+}
+
+@mixin slider() {
+  width: 100%;
+  @include slider-div-layout();
+}
+
+@mixin shadow() {
+  box-shadow: 0 0.3rem 0.6rem var(--shadow-colour);
+}
+
+@mixin border-horizontal() {
+  position: relative;
+  @include before();
+
+  &:before {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 0.1rem solid var(--border);
+  }
+}
+
+@mixin border-vertical() {
+  position: relative;
+  @include before();
+
+  &:before {
+    top: -2rem;
+    height: calc(100% + 4rem);
+    left: 50%;
+    border-left: 0.1rem solid var(--border);
+  }
+}
+
+@mixin calendar-notch() {
+  @include before();
+
+  &:before {
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--grey-darker);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: rotate(45deg) translateX(-50%);
+    transform-origin: top center;
+  }
+}

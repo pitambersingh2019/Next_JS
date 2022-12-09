@@ -1,0 +1,6 @@
+@import '_styles/mixins/layouts';
+
+.action {
+  @include flex();
+  justify-content: center;
+}

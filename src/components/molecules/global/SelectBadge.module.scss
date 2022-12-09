@@ -1,0 +1,46 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/interaction';
+@import '_styles/mixins/animation';
+
+.root {
+  @include grid-even(2, 3rem);
+
+  @include portrait() {
+    @include grid-cols(4);
+  }
+
+  @include landscape() {
+    grid-gap: 4rem;
+  }
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    @include w-c-o-t();
+
+    span {
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
+  }
+}
+
+.badge {
+  @include image-feedback();
+  width: 8.5rem;
+
+  img {
+    height: 10rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.inactive {
+  opacity: 0.85;
+  transform: scale(0.85);
+}

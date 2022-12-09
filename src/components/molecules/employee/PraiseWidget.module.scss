@@ -1,0 +1,102 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/interaction';
+@import '_styles/mixins/animation';
+
+.root,
+.actions {
+  @include flex();
+  flex-wrap: wrap;
+}
+
+.root {
+  align-items: flex-start;
+  justify-content: space-between;
+
+  > h2 {
+    margin: 0 3rem 1rem 0;
+
+    @include portrait() {
+      margin-right: 4rem;
+    }
+  }
+}
+
+.wrapper {
+  width: 100%;
+  margin-bottom: auto;
+  height: 27.6rem;
+
+  @include breakpoint(478px) {
+    height: 17.9rem;
+  }
+  
+  @include portrait() {
+    height: 16.9rem;
+  }
+
+  @include landscape() {
+    height: 29.2rem;
+  }
+
+  @include breakpoint(1186px) {
+    height: 17.8rem;
+  }
+}
+
+.view,
+.selected,
+.form label {
+  margin-bottom: 3rem;
+
+  @include portrait() {
+    margin-bottom: 4rem;
+  }
+}
+
+.view {
+  line-height: 2.24rem;
+  background-position: 0 calc(100% - 0.4rem), 0 calc(100% - 0.4rem), 0 calc(100% - 0.4rem);
+
+  @include all () {
+    font-size: 1.2rem;
+  }
+
+  @include landscape() {
+    line-height: 2.52rem;
+  }
+}
+
+.form {
+  width: 100%;
+
+  label {
+    flex-grow: 1;
+  }
+
+  button[type=submit] {
+    margin-top: 1rem;
+
+    @include portrait() {
+      margin-top: 0;
+    }
+  }
+}
+
+.actions {
+  justify-content: flex-start;
+}
+
+.selected {
+  @include image-feedback();
+  width: 6.8rem;
+  height: 8rem;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-right: 3rem;
+}
+
+.badges li {
+  transform: scale(1);
+  opacity: 0.999;
+}

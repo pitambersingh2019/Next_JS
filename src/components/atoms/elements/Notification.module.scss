@@ -1,0 +1,22 @@
+@import '_styles/mixins/breakpoints';
+
+.root {
+  min-width: 2.4rem;
+  height: 2.4rem;
+  color: var(--white);
+  background-color: var(--grey-dark);
+  border: 0.2rem solid var(--white);
+  border-radius: 2.4rem;
+  font-size: 1.1rem;
+  line-height: 2rem;
+  font-weight: var(--semibold);
+  padding: 0 0.5rem;
+
+  @include portrait() {
+    min-width: 2.9rem;
+    height: 2.9rem;
+    border-radius: 2.9rem;
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+  }
+}

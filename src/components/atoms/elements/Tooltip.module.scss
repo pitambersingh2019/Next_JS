@@ -1,0 +1,40 @@
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/animation';
+
+.root {
+  position: relative;
+  border-bottom: 0.1rem dotted;
+
+  &:hover aside {
+    opacity: 0.999;
+    transform: translate(-50%, 0);
+  }
+}
+
+.overlay {
+  pointer-events: none;
+  z-index: 25;
+  position: absolute;
+  top: calc(100% + 1rem);
+  left: 50%;
+  color: var(--white);
+  background-color: var(--grey-dark);
+  width: 22.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  opacity: 0.001;
+  transform: translate(-50%, -0.5rem);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  @include w-c-o-t();
+  @include before();
+
+  &:before {
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: var(--grey-dark);
+    top: -0.4rem;
+    @include central-x();
+    transform: translateX(-50%) rotate(45deg);
+  }
+}

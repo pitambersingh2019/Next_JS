@@ -1,0 +1,15 @@
+@import '_styles/mixins/breakpoints';
+
+.like {
+  margin-top: 1rem;
+  font-weight: var(--medium);
+  white-space: pre;
+
+  @include portrait() {
+    margin: 0 0 0 auto;
+  }
+}
+
+.unlike {
+  font-weight: var(--semibold);
+}

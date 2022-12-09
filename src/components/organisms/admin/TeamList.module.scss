@@ -1,0 +1,141 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/type';
+
+.header {
+  padding: 0 var(--padding) var(--padding);
+  @include border-horizontal();
+
+  @include below-portrait() {
+    a {
+      margin-bottom: 2rem;
+    }
+  }
+
+  @include portrait() {
+    @include flex();
+
+    a {
+      order: 2;
+    }
+
+    form {
+      order: 1;
+      flex-grow: 1;
+      margin-right: var(--padding);
+    }
+  }
+}
+
+.table {
+  padding-top: var(--padding);
+  display: flex;
+  flex-wrap: wrap;
+
+  h3 {
+    @include weight-semibold();
+    margin: 0 var(--padding) 3rem;
+  }
+
+  table {
+    overflow: hidden;
+  }
+
+  th,
+  td {
+    &:first-of-type {
+      width: 100%;
+
+      div {
+        width: 100%;
+        flex-wrap: wrap;
+        margin-top: 1.5rem;
+      }
+    }
+
+    &:nth-of-type(3),
+    &:nth-of-type(4) {
+      display: none;
+    }
+
+    @include portrait() {
+      min-width: 12rem;
+
+      &:first-of-type div {
+        display: none;
+      }
+
+      &:nth-of-type(2),
+      &:nth-of-type(4) {
+        display: table-cell;
+      }
+
+      &:nth-of-type(4) {
+        min-width: 19rem;
+      }
+    }
+
+    @include landscape() {
+      &:nth-of-type(3) {
+        display: table-cell;
+      }
+
+      &:nth-of-type(4) {
+        min-width: 20rem;
+      }
+    }
+  }
+
+  td {
+    &:not(:first-of-type) {
+      white-space: unset;
+    }
+
+    @include landscape() {
+      vertical-align: middle;
+    }
+
+    > div {
+      > a,
+      > button {
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  p {
+    width: 100%;
+
+    @include all() {
+      margin: 0 var(--padding);
+    }
+  }
+
+  > div:last-child {
+    margin: 0 var(--padding);
+  }
+}
+
+.pagination {
+  margin: -1.3rem -1.6rem 0 auto;
+  padding-right: var(--padding);
+}
+
+.slider {
+  @include slider();
+  overflow: hidden;
+
+  > div > div > div {
+    width: 100%;
+  }
+}
+
+.slide {
+  width: 100%;
+}
+
+.department {
+  display: block;
+}

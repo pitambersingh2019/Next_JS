@@ -1,0 +1,1134 @@
+{
+	"topics": {
+    "all": [
+      {
+        "id": "1234",
+        "name": "Health and safety",
+        "active": 1,
+        "ended": 0
+      },
+      {
+        "id": "5678",
+        "name": "Management",
+        "active": 0,
+        "ended": 1
+      },
+      {
+        "id": "4321",
+        "name": "Product",
+        "active": 1,
+        "ended": 0
+      },
+      {
+        "id": "8765",
+        "name": "Sales",
+        "active": 0,
+        "ended": 1
+      }
+    ]
+	},
+  "widget": {
+    "averageScore": 90,
+    "surveys": [
+      {
+        "id": "1",
+        "name": "Health and safety annual learning survey",
+        "topicName": "Health and safety",
+        "createdOn": "2021/04/12"
+      },
+      {
+        "id": "2",
+        "name": "Employee commute survey",
+        "topicName": "Transport",
+        "createdOn": "2021/05/02"
+      }
+    ]
+  },
+  "happiness": {
+    "surveys": [
+      {
+        "id": "1",
+        "type": "rating",
+        "title": "How has the last 3 months at the business been for you?",
+        "category": "Rating",
+        "worst": "Terrible",
+        "best": "Great"
+      },
+      {
+        "id": "2",
+        "type": "emoji",
+        "title": "How is the coffee machine?",
+        "category": "Emoji"
+      },
+      {
+        "id": "3",
+        "type": "prompt",
+        "title": "Multiple question happiness survey",
+        "category": "Prompt",
+        "date": "2021/04/12"
+      },
+      {
+        "id": "4",
+        "type": "prompt",
+        "title": "Multiple question happiness survey - no date",
+        "category": "Prompt",
+        "date": ""
+      }
+    ]
+  },
+  "create": {
+    "name": "Health and Safety Annual Learning",
+    "description": "Q4 Learning Module - Health & Safety in the workplace",
+    "topicId": "4321",
+    "start": true,
+    "questions": [
+      {
+        "question": "What should you do if you find a colleague experiencing chest pains?",
+        "type": 1,
+        "choices": [{
+          "text": "Call a supervisor",
+          "correct": false
+        }, {
+          "text": "Call an ambulance",
+          "correct": true
+        }, {
+          "text": "Get them some water",
+          "correct": false
+        }]
+      },
+      {
+        "question": "If you can see a colleague is suffering from stress within their role, how would you respond?",
+        "type": 1,
+        "choices": [{
+          "text": "Ask if they need some support",
+          "correct": false
+        }, {
+          "text": "Tell a colleague",
+          "correct": false
+        }, {
+          "text": "Tell a supervisor",
+          "correct": true
+        }, {
+          "text": "Leave them alone and hope they manage",
+          "correct": false
+        }]
+      }
+    ],
+    "recipients": [1170, 1169, 1215]
+  },
+  "summary": {
+    "all": {
+      "active": 2,
+      "averageScore": 82,
+      "responseRate": 76,
+      "topics": [
+        {
+          "id": "1234",
+          "name": "Health and safety"
+        },
+        {
+          "id": "5678",
+          "name": "Management"
+        },
+        {
+          "id": "4321",
+          "name": "Product"
+        },
+        {
+          "id": "8765",
+          "name": "Sales"
+        }
+      ],
+      "trends": [
+        {
+          "topicId": "4321",
+          "topicName": "Product",
+          "change": 8,
+          "averageScore": 90
+        },
+        {
+          "topicId": "8765",
+          "topicName": "Sales",
+          "change": 0,
+          "averageScore": 80
+        },
+        {
+          "topicId": "5678",
+          "topicName": "Management",
+          "change": -3,
+          "averageScore": 85
+        },
+        {
+          "topicId": "1234",
+          "topicName": "Health and safety",
+          "change": -10,
+          "averageScore": 75
+        }
+      ],
+      "graph": {
+        "change": 8,
+        "yAxis": "percent",
+        "data": [
+          {
+            "date": "2020-07-24",
+            "score": 48
+          },
+          {
+            "date": "2020-07-31",
+            "score": 50
+          },
+          {
+            "date": "2020-08-07",
+            "score": 53
+          },
+          {
+            "date": "2020-08-14",
+            "score": 55
+          },
+          {
+            "date": "2020-08-21",
+            "score": 54
+          },
+          {
+            "date": "2020-08-28",
+            "score": 52
+          },
+          {
+            "date": "2020-09-04",
+            "score": 49
+          },
+          {
+            "date": "2020-09-11",
+            "score": 46
+          },
+          {
+            "date": "2020-09-18",
+            "score": 50
+          },
+          {
+            "date": "2020-09-25",
+            "score": 56
+          },
+          {
+            "date": "2020-10-02",
+            "score": 60
+          },
+          {
+            "date": "2020-10-09",
+            "score": 63
+          },
+          {
+            "date": "2020-10-16",
+            "score": 67
+          },
+          {
+            "date": "2020-10-23",
+            "score": 73
+          },
+          {
+            "date": "2020-10-30",
+            "score": 75
+          },
+          {
+            "date": "2020-11-06",
+            "score": 77
+          },
+          {
+            "date": "2020-11-13",
+            "score": 78
+          },
+          {
+            "date": "2020-11-20",
+            "score": 79
+          },
+          {
+            "date": "2020-11-27",
+            "score": 80
+          },
+          {
+            "date": "2020-12-04",
+            "score": 81
+          },
+          {
+            "date": "2020-12-11",
+            "score": 82
+          }
+        ]
+      },
+      "list": [
+        {
+          "id": "768c22b7-0f3f-4245-88ce-5b6dd013b7a0",
+          "name": "Product learning",
+          "topic": "Product",
+          "status": "Active",
+          "averageScore": 90,
+          "responseRate": 80,
+          "createdBy": "Prosper EX"
+        },
+        {
+          "id": "768c22b7-0f3f-4245-88ce-5b6dd013b7a0",
+          "name": "Health and safety annual learning",
+          "topic": "Health and safety",
+          "status": "Draft",
+          "averageScore": 0,
+          "responseRate": 0,
+          "createdBy": null
+        },
+        {
+          "id": "768c22b7-0f3f-4245-88ce-5b6dd013b7a0",
+          "name": "Selling theories sales learning",
+          "topic": "Sales",
+          "status": "Ended",
+          "averageScore": 80,
+          "responseRate": 65,
+          "createdBy": null
+        },
+        {
+          "id": "768c22b7-0f3f-4245-88ce-5b6dd013b7a0",
+          "name": "How well do you know our products?",
+          "topic": "Product",
+          "status": "Active",
+          "averageScore": 60,
+          "responseRate": 90,
+          "createdBy": null
+        },
+        {
+          "id": "768c22b7-0f3f-4245-88ce-5b6dd013b7a0",
+          "name": "How to sell almost anything",
+          "topic": "Sales",
+          "status": "Draft",
+          "averageScore": 0,
+          "responseRate": 0,
+          "createdBy": "Prosper EX"
+        },
+        {
+          "id": "768c22b7-0f3f-4245-88ce-5b6dd013b7a0",
+          "name": "Health and safety",
+          "topic": "Health and safety",
+          "status": "Ended",
+          "averageScore": 80,
+          "responseRate": 85,
+          "createdBy": null
+        },
+        {
+          "id": "768c22b7-0f3f-4245-88ce-5b6dd013b7a0",
+          "name": "The art of sales",
+          "topic": "Sales",
+          "status": "Active",
+          "averageScore": 30,
+          "responseRate": 40,
+          "createdBy": null
+        },
+        {
+          "id": "768c22b7-0f3f-4245-88ce-5b6dd013b7a0",
+          "name": "Rival products on the market",
+          "topic": "Product",
+          "status": "Ended",
+          "averageScore": 70,
+          "responseRate": 35,
+          "createdBy": "Prosper EX"
+        },
+        {
+          "id": "768c22b7-0f3f-4245-88ce-5b6dd013b7a0",
+          "name": "The art of good management ",
+          "topic": "Management",
+          "status": "Active",
+          "averageScore": 25,
+          "responseRate": 95,
+          "createdBy": null
+        },
+        {
+          "id": "768c22b7-0f3f-4245-88ce-5b6dd013b7a0",
+          "name": "Ways to work safely",
+          "topic": "Health and safety",
+          "status": "Draft",
+          "averageScore": 0,
+          "responseRate": 0,
+          "createdBy": null
+        }
+      ]
+    },
+    "4321": {
+      "active": 2,
+      "averageScore": 75,
+      "responseRate": 69,
+      "topics": [
+        {
+          "id": "1234",
+          "name": "Health and safety"
+        },
+        {
+          "id": "5678",
+          "name": "Management"
+        },
+        {
+          "id": "4321",
+          "name": "Product"
+        },
+        {
+          "id": "8765",
+          "name": "Sales"
+        }
+      ],
+      "trends": [
+        {
+          "topicId": "4321",
+          "topicName": "Product",
+          "change": 4,
+          "averageScore": 90
+        }
+      ],
+      "graph": {
+        "change": 4,
+        "yAxis": "percent",
+        "data": [
+          {
+            "date": "2020-07-24",
+            "score": 20
+          },
+          {
+            "date": "2020-07-31",
+            "score": 50
+          },
+          {
+            "date": "2020-08-07",
+            "score": 53
+          },
+          {
+            "date": "2020-08-14",
+            "score": 55
+          },
+          {
+            "date": "2020-08-21",
+            "score": 54
+          },
+          {
+            "date": "2020-08-28",
+            "score": 52
+          },
+          {
+            "date": "2020-09-04",
+            "score": 49
+          },
+          {
+            "date": "2020-09-11",
+            "score": 46
+          },
+          {
+            "date": "2020-09-18",
+            "score": 50
+          },
+          {
+            "date": "2020-09-25",
+            "score": 56
+          },
+          {
+            "date": "2020-10-02",
+            "score": 60
+          },
+          {
+            "date": "2020-10-09",
+            "score": 63
+          },
+          {
+            "date": "2020-10-16",
+            "score": 67
+          },
+          {
+            "date": "2020-10-23",
+            "score": 73
+          },
+          {
+            "date": "2020-10-30",
+            "score": 75
+          },
+          {
+            "date": "2020-11-06",
+            "score": 77
+          },
+          {
+            "date": "2020-11-13",
+            "score": 78
+          },
+          {
+            "date": "2020-11-20",
+            "score": 79
+          },
+          {
+            "date": "2020-11-27",
+            "score": 80
+          },
+          {
+            "date": "2020-12-04",
+            "score": 81
+          },
+          {
+            "date": "2020-12-11",
+            "score": 100
+          }
+        ]
+      },
+      "list": [
+        {
+          "id": "768c22b7-0f3f-4245-88ce-5b6dd013b7a0",
+          "name": "Product learning",
+          "topic": "Product",
+          "status": "Active",
+          "averageScore": 90,
+          "responseRate": 80,
+          "createdBy": "Prosper EX"
+        },
+        {
+          "id": "768c22b7-0f3f-4245-88ce-5b6dd013b7a0",
+          "name": "How well do you know our products?",
+          "topic": "Product",
+          "status": "Active",
+          "averageScore": 60,
+          "responseRate": 90,
+          "createdBy": null
+        },
+        {
+          "id": "768c22b7-0f3f-4245-88ce-5b6dd013b7a0",
+          "name": "Rival products on the market",
+          "topic": "Product",
+          "status": "Ended",
+          "averageScore": 70,
+          "responseRate": 35,
+          "createdBy": "Prosper EX"
+        }
+      ]
+    },
+    "1234": {
+      "active": 2,
+      "averageScore": 95,
+      "responseRate": 56,
+      "topics": [
+        {
+          "id": "1234",
+          "name": "Health and safety"
+        },
+        {
+          "id": "5678",
+          "name": "Management"
+        },
+        {
+          "id": "4321",
+          "name": "Product"
+        },
+        {
+          "id": "8765",
+          "name": "Sales"
+        }
+      ],
+      "trends": [
+        {
+          "topicId": "1234",
+          "topicName": "Health and safety",
+          "change": -10,
+          "averageScore": 75
+        }
+      ],
+      "graph": {
+        "change": -10,
+        "yAxis": "percent",
+        "data": [
+          {
+            "date": "2020-07-24",
+            "score": 60
+          },
+          {
+            "date": "2020-07-31",
+            "score": 50
+          },
+          {
+            "date": "2020-08-07",
+            "score": 53
+          },
+          {
+            "date": "2020-08-14",
+            "score": 55
+          },
+          {
+            "date": "2020-08-21",
+            "score": 54
+          },
+          {
+            "date": "2020-08-28",
+            "score": 52
+          },
+          {
+            "date": "2020-09-04",
+            "score": 49
+          },
+          {
+            "date": "2020-09-11",
+            "score": 46
+          },
+          {
+            "date": "2020-09-18",
+            "score": 50
+          },
+          {
+            "date": "2020-09-25",
+            "score": 56
+          },
+          {
+            "date": "2020-10-02",
+            "score": 60
+          },
+          {
+            "date": "2020-10-09",
+            "score": 63
+          },
+          {
+            "date": "2020-10-16",
+            "score": 67
+          },
+          {
+            "date": "2020-10-23",
+            "score": 73
+          },
+          {
+            "date": "2020-10-30",
+            "score": 75
+          },
+          {
+            "date": "2020-11-06",
+            "score": 77
+          },
+          {
+            "date": "2020-11-13",
+            "score": 78
+          },
+          {
+            "date": "2020-11-20",
+            "score": 79
+          },
+          {
+            "date": "2020-11-27",
+            "score": 80
+          },
+          {
+            "date": "2020-12-04",
+            "score": 81
+          },
+          {
+            "date": "2020-12-11",
+            "score": 60
+          }
+        ]
+      },
+      "list": [
+        {
+          "id": "768c22b7-0f3f-4245-88ce-5b6dd013b7a0",
+          "name": "Health and safety annual learning",
+          "topic": "Health and safety",
+          "status": "Draft",
+          "averageScore": 0,
+          "responseRate": 0,
+          "createdBy": null
+        },
+        {
+          "id": "768c22b7-0f3f-4245-88ce-5b6dd013b7a0",
+          "name": "YOLO church-key typewriter everyday carry humblebrag",
+          "topic": "Health and safety",
+          "status": "Ended",
+          "averageScore": 80,
+          "responseRate": 85,
+          "createdBy": null
+        },
+        {
+          "id": "768c22b7-0f3f-4245-88ce-5b6dd013b7a0",
+          "name": "Ways to work safely",
+          "topic": "Health and safety",
+          "status": "Draft",
+          "averageScore": 0,
+          "responseRate": 0,
+          "createdBy": null
+        }
+      ]
+    },
+    "5678": {
+      "active": 2,
+      "averageScore": 76,
+      "responseRate": 90,
+      "topics": [
+        {
+          "id": "1234",
+          "name": "Health and safety"
+        },
+        {
+          "id": "5678",
+          "name": "Management"
+        },
+        {
+          "id": "4321",
+          "name": "Product"
+        },
+        {
+          "id": "8765",
+          "name": "Sales"
+        }
+      ],
+      "trends": [
+        {
+          "topicId": "5678",
+          "topicName": "Management",
+          "change": -3,
+          "averageScore": 85
+        }
+      ],
+      "graph": {
+        "change": -3,
+        "yAxis": "percent",
+        "data": [
+          {
+            "date": "2020-07-24",
+            "score": 80
+          },
+          {
+            "date": "2020-07-31",
+            "score": 50
+          },
+          {
+            "date": "2020-08-07",
+            "score": 53
+          },
+          {
+            "date": "2020-08-14",
+            "score": 55
+          },
+          {
+            "date": "2020-08-21",
+            "score": 54
+          },
+          {
+            "date": "2020-08-28",
+            "score": 52
+          },
+          {
+            "date": "2020-09-04",
+            "score": 49
+          },
+          {
+            "date": "2020-09-11",
+            "score": 46
+          },
+          {
+            "date": "2020-09-18",
+            "score": 50
+          },
+          {
+            "date": "2020-09-25",
+            "score": 56
+          },
+          {
+            "date": "2020-10-02",
+            "score": 60
+          },
+          {
+            "date": "2020-10-09",
+            "score": 63
+          },
+          {
+            "date": "2020-10-16",
+            "score": 67
+          },
+          {
+            "date": "2020-10-23",
+            "score": 73
+          },
+          {
+            "date": "2020-10-30",
+            "score": 75
+          },
+          {
+            "date": "2020-11-06",
+            "score": 77
+          },
+          {
+            "date": "2020-11-13",
+            "score": 78
+          },
+          {
+            "date": "2020-11-20",
+            "score": 79
+          },
+          {
+            "date": "2020-11-27",
+            "score": 80
+          },
+          {
+            "date": "2020-12-04",
+            "score": 81
+          },
+          {
+            "date": "2020-12-11",
+            "score": 40
+          }
+        ]
+      },
+      "list": [
+        {
+          "id": "10",
+          "name": "The art of good management ",
+          "topic": "Management",
+          "status": "Active",
+          "averageScore": 25,
+          "responseRate": 95,
+          "createdBy": null
+        }
+      ]
+    },
+    "8765": {
+      "active": 2,
+      "averageScore": 66,
+      "responseRate": 97,
+      "topics": [
+        {
+          "id": "1234",
+          "name": "Health and safety"
+        },
+        {
+          "id": "5678",
+          "name": "Management"
+        },
+        {
+          "id": "4321",
+          "name": "Product"
+        },
+        {
+          "id": "8765",
+          "name": "Sales"
+        }
+      ],
+      "trends": [
+        {
+          "topicId": "8765",
+          "topicName": "Sales",
+          "change": 0,
+          "averageScore": 80
+        }
+      ],
+      "graph": {
+        "change": 0,
+        "yAxis": "percent",
+        "data": [
+          {
+            "date": "2020-07-24",
+            "score": 100
+          },
+          {
+            "date": "2020-07-31",
+            "score": 50
+          },
+          {
+            "date": "2020-08-07",
+            "score": 53
+          },
+          {
+            "date": "2020-08-14",
+            "score": 55
+          },
+          {
+            "date": "2020-08-21",
+            "score": 54
+          },
+          {
+            "date": "2020-08-28",
+            "score": 52
+          },
+          {
+            "date": "2020-09-04",
+            "score": 49
+          },
+          {
+            "date": "2020-09-11",
+            "score": 46
+          },
+          {
+            "date": "2020-09-18",
+            "score": 50
+          },
+          {
+            "date": "2020-09-25",
+            "score": 56
+          },
+          {
+            "date": "2020-10-02",
+            "score": 60
+          },
+          {
+            "date": "2020-10-09",
+            "score": 63
+          },
+          {
+            "date": "2020-10-16",
+            "score": 67
+          },
+          {
+            "date": "2020-10-23",
+            "score": 73
+          },
+          {
+            "date": "2020-10-30",
+            "score": 75
+          },
+          {
+            "date": "2020-11-06",
+            "score": 77
+          },
+          {
+            "date": "2020-11-13",
+            "score": 78
+          },
+          {
+            "date": "2020-11-20",
+            "score": 79
+          },
+          {
+            "date": "2020-11-27",
+            "score": 80
+          },
+          {
+            "date": "2020-12-04",
+            "score": 81
+          },
+          {
+            "date": "2020-12-11",
+            "score": 20
+          }
+        ]
+      },
+      "list": [
+        {
+          "id": "768c22b7-0f3f-4245-88ce-5b6dd013b7a0",
+          "name": "Selling theories sales learning",
+          "topic": "Sales",
+          "status": "Ended",
+          "averageScore": 80,
+          "responseRate": 65,
+          "createdBy": null
+        },
+        {
+          "id": "768c22b7-0f3f-4245-88ce-5b6dd013b7a0",
+          "name": "How to sell almost anything",
+          "topic": "Sales",
+          "status": "Draft",
+          "averageScore": 0,
+          "responseRate": 0,
+          "createdBy": "Prosper EX"
+        },
+        {
+          "id": "768c22b7-0f3f-4245-88ce-5b6dd013b7a0",
+          "name": "The art of sales",
+          "topic": "Sales",
+          "status": "Active",
+          "averageScore": 30,
+          "responseRate": 40,
+          "createdBy": null
+        }
+      ]
+    }
+  },
+  "results": {
+    "name": "Health and Safety Annual Learning",
+    "description": "Q4 Health & Safety Learning results - Health & Safety in the workplace Unit 1",
+    "topicName": "Health and safety",
+    "averageScore": 84,
+    "responseRate": 72,
+    "recipientTotal": 12,
+    "haveResponded": [
+      "Sam Gooch", 
+      "Billy Watson",
+      "Ben Hirst",
+      "Rowan Cavanagh",
+      "Danielle Warner",
+      "Oli Taylor", 
+      "Oliver Bailey", 
+      "Heather Body",
+      "James McSweeney"
+    ],
+    "notResponded": [
+      "Tom Thumb",
+      "Sean Bean",
+      "Dick van Dyke"
+    ],
+    "responses": [
+      {
+        "question": "What should you do if you find a colleague experiencing chest pains?",
+        "type": 1,
+        "answers": [{
+          "text": "Call a supervisor",
+          "correct": false,
+          "totalAnswered": 4
+        }, {
+          "text": "Call an ambulance",
+          "correct": true,
+          "totalAnswered": 87
+        }, {
+          "text": "Get them some water",
+          "correct": false,
+          "totalAnswered": 9
+        }],
+        "incorrect": [
+          "Rowan Cavanagh",
+          "Danielle Warner",
+          "Oli Taylor", 
+          "Oliver Bailey"
+        ]
+      },
+      {
+        "question": "If you can see a colleague is suffering from stress within their role, how would you respond?",
+        "type": 1,
+        "answers": [{
+          "text": "Ask if they need some support",
+          "correct": false,
+          "totalAnswered": 0
+        }, {
+          "text": "Tell a colleague",
+          "correct": false,
+          "totalAnswered": 28
+        }, {
+          "text": "Tell a supervisor",
+          "correct": true,
+          "totalAnswered": 60
+        }, {
+          "text": "Leave them alone and hope they manage",
+          "correct": false,
+          "totalAnswered": 12
+        }],
+        "incorrect": [
+          "Firstname Lastname",
+          "Anothername Lastname",
+          "Firstname Lastname",
+          "Anothername Lastname",
+          "Firstname Lastname",
+          "Anothername Lastname",
+          "Firstname Lastname",
+          "Anothername Lastname",
+          "Firstname Lastname"
+        ]
+      }
+    ]
+  },
+  "individual": {
+    "1168": {
+      "score": 60,
+      "incorrectCount": 2,
+      "responses": [ 
+        {
+          "question": "What should you do if you find a colleague experiencing chest pains?",
+          "type": 1,
+          "answers": [{
+            "text": "Call a supervisor",
+            "correct": false
+          }, {
+            "text": "Call an ambulance",
+            "correct": true
+          }, {
+            "text": "Get them some water",
+            "correct": false,
+            "userAnswered": true
+          }]
+        },
+        {
+          "question": "If you can see a colleague is suffering from stress within their role, how would you respond?",
+          "type": 1,
+          "answers": [{
+            "text": "Ask if they need some support",
+            "correct": false
+          }, {
+            "text": "Tell a colleague",
+            "correct": false,
+            "userAnswered": true
+          }, {
+            "text": "Tell a supervisor",
+            "correct": true
+          }, {
+            "text": "Leave them alone and hope they manage",
+            "correct": false
+          }]
+        }
+      ]
+    },
+    "1169": {
+      "score": 75,
+      "incorrectCount": 1,
+      "responses": [ 
+        {
+          "question": "What should you do if you find a colleague experiencing chest pains?",
+          "type": 1,
+          "answers": [{
+            "text": "Call a supervisor",
+            "correct": false
+          }, {
+            "text": "Call an ambulance",
+            "correct": true,
+            "userAnswered": true
+          }, {
+            "text": "Get them some water",
+            "correct": false
+          }]
+        },
+        {
+          "question": "If you can see a colleague is suffering from stress within their role, how would you respond?",
+          "type": 1,
+          "answers": [{
+            "text": "Ask if they need some support",
+            "correct": false
+          }, {
+            "text": "Tell a colleague",
+            "correct": false,
+            "userAnswered": true
+          }, {
+            "text": "Tell a supervisor",
+            "correct": true
+          }, {
+            "text": "Leave them alone and hope they manage",
+            "correct": false
+          }]
+        }
+      ]
+    },
+    "1170": {
+      "score": 100,
+      "incorrectCount": 0,
+      "responses": [ 
+        {
+          "question": "What should you do if you find a colleague experiencing chest pains?",
+          "type": 1,
+          "answers": [{
+            "text": "Call a supervisor",
+            "correct": false
+          }, {
+            "text": "Call an ambulance",
+            "correct": true,
+            "userAnswered": true
+          }, {
+            "text": "Get them some water",
+            "correct": false
+          }]
+        },
+        {
+          "question": "If you can see a colleague is suffering from stress within their role, how would you respond?",
+          "type": 1,
+          "answers": [{
+            "text": "Ask if they need some support",
+            "correct": false
+          }, {
+            "text": "Tell a colleague",
+            "correct": false
+          }, {
+            "text": "Tell a supervisor",
+            "correct": true,
+            "userAnswered": true
+          }, {
+            "text": "Leave them alone and hope they manage",
+            "correct": false
+          }]
+        }
+      ]
+    }
+  }
+}

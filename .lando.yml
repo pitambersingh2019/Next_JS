@@ -1,0 +1,25 @@
+name: prosperex-frontend
+services:
+  frontend:
+    type: node:16
+    scanner: false
+    ssl: true
+    build:
+      - yarn --cwd /app
+      - yarn --cwd /app build
+tooling:
+  node:
+    description: Run node commands
+    service: frontend
+    cmd: node
+  npm:
+    description: Run npm commands
+    service: frontend
+    cmd: npm
+  yarn:
+    description: Run yarn commands
+    service: frontend
+    cmd: yarn
+proxy:
+  frontend:
+    - www.prosperex.local:3000

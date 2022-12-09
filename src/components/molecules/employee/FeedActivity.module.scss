@@ -1,0 +1,34 @@
+@import '_styles/mixins/layouts';
+
+.root {
+  border-bottom: 0.1rem solid var(--grey-light);
+  @include flex();
+  padding: 2rem 0;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  span {
+    display: block;
+  }
+}
+
+.avatar {
+  width: 5rem;
+  height: 5rem;
+  position: relative;
+  margin-right: 2rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+
+  img {
+    @include absolute-cover();
+    border-radius: 50%;
+  }
+
+  span {
+    display: none;
+  }
+}

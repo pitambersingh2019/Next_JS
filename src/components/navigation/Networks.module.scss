@@ -1,0 +1,23 @@
+@import '_styles/mixins/interaction';
+@import '_styles/mixins/breakpoints';
+
+.root {
+  ul,
+  a {
+    display: flex;
+  }
+
+  ul {
+    margin: 1rem 0 0 -1.5rem;
+
+    @include desktop() {
+      height: 100%;
+    }
+  }
+
+  a {
+    width: 4.4rem;
+    justify-content: center;
+    @include active-scale(0.9);
+  }
+}

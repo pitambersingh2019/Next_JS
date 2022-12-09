@@ -1,0 +1,61 @@
+.average {
+  &--green,
+  &-blob--green,
+  &--yellow,
+  &-blob--yellow,
+  &--red,
+  &-blob--red,
+  &--orange,
+  &-blob--orange {
+    position: relative;
+    @include before();
+  
+    &:before {
+      width: 14rem;
+      height: 14rem;
+      border-radius: 50%;
+      z-index: -1;   
+    }
+
+    @include landscape() {
+      &:before {
+        width: 16rem;
+        height: 16rem;
+      }
+    }
+  }
+
+  &--green,
+  &-blob--green,
+  &--yellow,
+  &-blob--yellow {
+    color: var(--black);
+  }
+
+  &--red,
+  &-blob--red,
+  &--orange,
+  &-blob--orange {
+    color: var(--white);
+  }
+
+  &--green,
+  &-blob--green:before {
+   background-color: var(--green);
+  }
+
+  &--yellow,
+  &-blob--yellow:before {
+    background-color: var(--yellow);
+  }
+
+  &--orange,
+  &-blob--orange:before {
+    background-color: var(--orange);
+  }
+
+  &--red,
+  &-blob--red:before {
+    background-color: var(--red);
+  }
+}

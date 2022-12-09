@@ -1,0 +1,49 @@
+variables:
+  # Container registry service connection established during pipeline creation
+  dockerRegistryServiceConnection: 'b6edb14e-3213-41ba-97a5-b97818f708d7'
+  imageRepository: '$(Build.SourceBranchName)/prosperexfrontend'
+  containerRegistry: 'prosperexacr.azurecr.io'
+  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
+  tag: '$(Build.SourceVersion)'
+
+  # Agent VM image name
+  vmImageName: 'ubuntu-latest'
+
+stages:
+  - stage: Build
+    displayName: Build Image and Push to ACR
+    jobs:
+      - job: Build
+        displayName: Build and Push Image
+        pool:
+          vmImage: $(vmImageName)
+        steps:
+          - task: Docker@2
+            displayName: Build and push image to ACR
+            inputs:
+              command: buildAndPush
+              repository: $(imageRepository)
+              dockerfile: $(dockerfilePath)
+              containerRegistry: $(dockerRegistryServiceConnection)
+              tags: |
+                $(tag)
+  - stage: K8s
+    displayName: Deploy K8 Manifests
+    jobs:
+      - job: PublishManifests
+        displayName: Copy and Publish K8s Manifests
+        pool:
+          vmImage: $(vmImageName)
+        steps:
+          - task: CopyFiles@2
+            displayName: Copy K8s Manifests to Staging Directory
+            inputs:
+              SourceFolder: '$(System.DefaultWorkingDirectory)/kube-manifests'
+              Contents: '**'
+              TargetFolder: '$(Build.ArtifactStagingDirectory)'
+          - task: PublishBuildArtifacts@1
+            displayName: Publish K8s Manifests
+            inputs:
+              PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+              ArtifactName: 'kube-manifests'
+              publishLocation: 'Container'

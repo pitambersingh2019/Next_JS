@@ -1,0 +1,85 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+
+.root {
+  color: var(--white);
+  background-color: var(--blue);
+  @include shadow();
+}
+
+.custom {
+  background-color: var(--brand);
+  position: relative;
+  @include before();
+
+  &:before {
+    @include absolute-cover();
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.inner {
+  @include flex();
+  justify-content: center;
+  padding: 2rem 7rem 2rem 3rem;
+
+  @include portrait() {
+    padding: 1rem 4rem;
+  }
+
+  @include landscape() {
+    padding: 1rem 5rem;
+  }
+
+  @include desktop() {
+    padding: 1rem 6rem;
+  }
+}
+
+.badge {
+  @include flex();
+
+  img {
+    height: 5rem;
+    width: 4rem;
+    margin-right: 2rem;
+  }
+
+  small {
+    color: rgba(255, 255, 255, 0.5);
+    display: inline-block;
+
+    @include portrait() {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.close {
+  width: 4.4rem;
+  height: 4.4rem;
+  position: absolute;
+  right: 1.5rem;
+  @include central-y();
+
+  @include portrait() {
+    right: 2.5rem;
+  }
+
+  @include landscape() {
+    right: 3.5rem;
+  }
+
+  @include desktop() {
+    right: 4.5rem;
+  }
+
+  svg {
+    width: 1rem;
+    stroke: var(--white);
+  }
+
+  &:hover svg {
+    stroke: var(--blue-light);
+  }
+}

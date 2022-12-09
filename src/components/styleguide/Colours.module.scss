@@ -1,0 +1,53 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+
+.root {
+  padding-top: 10rem;
+
+  @include landscape() {
+    padding-top: 15rem;
+  }
+
+  ul {
+    @include grid-even(2, 3rem var(--gap));
+
+    @media screen and (min-width: 500px) {/* stylelint-disable-line */
+      @include grid-cols(3);
+    }
+
+    @include portrait() {
+      @include grid-cols(4);
+    }
+
+    @include landscape() {
+      @include grid-cols(6);
+    }
+  }
+}
+
+.swatch {
+  text-align: center;
+  @include square-aspect();
+
+  &:before {
+    border: 0.1rem solid var(--white);
+    margin-bottom: 2rem;
+    background-color: var(--hex);
+  }
+
+  > * {
+    position: unset;
+    height: unset;
+    width: unset;
+    top: unset;
+    left: unset;
+  }
+
+  h4 {
+    margin-bottom: 1rem;
+  }
+}
+
+.light:before {
+  border-color: var(--grey);
+}

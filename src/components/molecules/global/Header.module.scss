@@ -1,0 +1,104 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/interaction';
+
+.root {
+  --gutter-portrait: 8rem;
+  position: relative;
+  z-index: 5;
+  color: var(--blue);
+  padding: 4rem 0;
+  @include before();
+
+  &:before {
+    top: 0;
+    left: 0;
+    height: 1rem;
+    width: 100%;
+    background: url('./../../../assets/images/swirl-hero.svg') 0 0 no-repeat;
+    background-size: cover;
+  }
+
+  @include portrait() {
+    padding: 7rem 0;
+  }
+
+  @include landscape() {
+    padding: 6rem 0;
+  }
+
+  > div {
+    height: 2.5rem;
+    @include flex();
+    justify-content: space-between;
+
+    @include portrait() {
+      height: 3rem;
+    }
+
+    @include portrait-only() {
+      padding: 0 8rem;
+    }
+
+    @include landscape() {
+      height: 3.5rem;
+    }
+  }
+
+  a:hover {
+    path {
+      fill: var(--blue);
+    }
+  }
+}
+
+.background {
+  &:before {
+    content: none;
+  }
+
+  a:hover {
+    path {
+      fill: var(--grey);
+    }
+  }
+}
+
+.hero a {
+  @include link-underline-colours('transparent', 'white', 'blue');
+}
+
+.logo {
+  display: inline-block;
+  @include active-scale();
+  height: 100%;
+
+  svg {
+    width: auto;
+    height: 100%;
+  }
+}
+
+.nav {
+  ul {
+    @include flex();
+  }
+
+  li {
+    margin-left: 6rem;
+
+    &:first-of-type {
+      @include below-portrait() {
+        display: none;
+      }
+    }
+  }
+}
+
+.link {
+  @include link-underline('transparent', 'blue', 'blue-light');
+}
+
+.active {
+  @include link-underline-colours('blue', 'blue-light', 'black');
+}

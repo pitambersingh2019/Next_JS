@@ -1,0 +1,66 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/interaction';
+
+.root {
+  padding: 10rem 0 4rem;
+
+  @include portrait() {
+    padding: 15rem 0 8rem;
+  }
+
+  @include desktop() {
+    padding: 20rem 0 12rem;
+  }
+
+  > div {
+    @include col();
+  }
+
+  h2 {
+    margin-bottom: 6rem;
+    text-align: center;
+
+    @include landscape() {
+      margin-bottom: 7rem;
+    }
+  }
+}
+
+.grid {
+  width: 100%;
+  @include flex();
+  justify-content: center;
+  flex-wrap: wrap;
+
+  @include portrait() {
+    margin: 0 auto;
+  }
+
+  @include desktop() {
+    width: 106rem;
+  }
+}
+
+.company {
+  @include col();
+  justify-content: center;
+  @include active-scale(0.95);
+  width: calc(50% - 3rem);
+  margin: 0 1.5rem 6rem;
+
+  @include portrait() {
+    width: calc(25% - 4rem);
+    margin: 0 2rem 7rem;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  figure {
+    margin: 0 auto;
+    max-width: 16rem;
+    max-height: 16rem;
+  }
+}

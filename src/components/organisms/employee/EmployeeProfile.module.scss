@@ -1,0 +1,105 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/interaction';
+
+.grid {
+  @include grid-even(1, var(--padding));
+
+  @include below-portrait() {
+    padding: var(--padding) 0;
+  }
+
+  @include portrait() {
+    padding: 0;
+  }
+
+  @include landscape() {
+    grid-template-columns: minmax(1rem, 1fr) 20rem;
+    margin: 0 auto;
+    max-width: 114rem;
+    width: 100%;
+  }
+}
+
+.advert {
+  @include landscape() {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+}
+
+.body {
+  h2,
+  legend {
+    color: var(--blue);
+  }
+
+  h2 {
+    margin-bottom: var(--margin);
+  }
+
+  fieldset:not(:first-of-type),
+  button[type="submit"] {
+    margin: 0;
+
+    @include landscape() {
+      margin: 0;
+    }
+  }
+}
+
+.section {
+  padding: 3rem 0;
+  position: relative;
+  @include before();
+
+  &:before {
+    width: calc(100% + calc(2 * var(--padding)));
+    top: 0;
+    left: calc(-1 * var(--padding));
+    border-top: 0.1rem solid var(--grey-light);
+  }
+
+  @include portrait() {
+    padding: 5rem 0;
+  }
+}
+
+.details {
+  padding-top: 0;
+
+  &:before {
+    content: none;
+  }
+
+  @include portrait() {
+    padding-top: 0;
+  }
+}
+
+.personal {
+  align-items: flex-start;
+
+  @include portrait() {
+    grid-template-columns: minmax(1rem, 1fr) 15rem;
+    grid-gap: 3rem 5rem;
+  }
+}
+
+.picture {
+  @include portrait() {
+    grid-column: 2 / 3;
+    grid-row: 1 / 4;
+    @include col();
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    label {
+      justify-content: flex-start;
+    }
+  }
+}
+
+.success {
+  padding-bottom: var(--padding);
+}

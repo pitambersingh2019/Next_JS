@@ -1,0 +1,103 @@
+@mixin text-hover-underline() {
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:active {
+    text-decoration: underline;
+  }
+}
+
+@mixin text-hover-none() {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active {
+    text-decoration: none;
+  }
+}
+
+@mixin text-hover-bold($initial: var(--regular)) {
+  font-variation-settings: 'wght' $initial;
+  transition: all 0.15s ease-out;
+
+  &:hover {
+    font-variation-settings: 'wght' var(--semibold);
+  }
+}
+
+@mixin link-underline-colours($initialColour, $hoverColour, $activeColour) {
+  $initial: var(--#{$initialColour});
+  $hover: var(--#{$hoverColour});
+  $active: var(--#{$activeColour});
+  background-image:
+    linear-gradient(#{$active}, #{$active}),
+    linear-gradient(#{$hover}, #{$hover}),
+    linear-gradient(#{$initial}, #{$initial});
+}
+
+@mixin link-underline-initial($size: 100%, $height: 0.2rem) {
+  background-size:
+    0 $height,
+    0 $height,
+    $size $height;
+}
+
+@mixin link-underline-hover($size: 100%, $height: 0.2rem) {
+  background-size:
+    0 $height,
+    $size $height,
+    $size $height;
+}
+
+@mixin link-underline-active($size: 100%, $height: 0.2rem) {
+  background-size:
+    $size $height,
+    $size $height,
+    $size $height;
+}
+
+@mixin link-underline($initialColour, $hoverColour, $activeColour, $bottom: 0rem, $size: 100%, $offset: 0, $height: 0.2rem) {
+  display: inline;
+  position: relative;
+  @include link-underline-colours($initialColour, $hoverColour, $activeColour);
+  @include link-underline-initial($size, $height);
+  background-position:
+    $offset calc(100% - #{$bottom}),
+    $offset calc(100% - #{$bottom}),
+    $offset calc(100% - #{$bottom});
+  background-repeat: no-repeat;
+  transition: background-size 0.075s ease-out;
+  will-change: background-size;
+  padding-bottom: $height;
+
+  &:hover {
+    @include link-underline-hover($size, $height);
+  }
+
+  &:active {
+    @include link-underline-active($size, $height);
+  }
+}
+
+@mixin active-scale($scale: 0.98) {
+  &:active {
+    transform: scale($scale);
+    transition: none;
+  }
+}
+
+@mixin image-feedback($scale: 0.98) {
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    transform: scale($scale);
+  }
+}

@@ -1,0 +1,41 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+
+.root {
+  border-bottom: 0.1rem solid var(--grey-light);
+  @include flex();
+  flex-wrap: wrap;
+  padding: 2rem 0;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  @include portrait() {
+    flex-wrap: nowrap;
+  }
+
+  span {
+    display: block;
+  }
+}
+
+.badge {
+  width: 4.5rem;
+  margin-right: 2.5rem;
+  flex-shrink: 0;
+}
+
+.wrapper {
+  width: calc(100% - 7rem);
+
+  @include portrait() {
+    width: auto;
+    margin-right: 5rem;
+  }
+}
+
+.message {
+  color: var(--grey-dark);
+  margin-top: 0.5rem;
+}

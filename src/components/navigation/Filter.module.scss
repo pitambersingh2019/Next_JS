@@ -1,0 +1,293 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/interaction';
+@import '_styles/mixins/animation';
+
+.root,
+.expand,
+.hidden {
+  background-color: var(--blue);
+}
+
+.root {
+  position: relative;
+  z-index: 12;
+  color: var(--white);
+  @include shadow();
+
+  @media print {
+    display: none;
+  }
+
+  > div {
+    @include flex();
+
+    @include below-landscape() {
+      padding: 0;
+    }
+
+    @include landscape() {
+      padding: 1rem 5rem;
+    }
+
+    @include desktop() {
+      padding: 1rem 6rem;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 0 var(--gutter) 1.8rem;
+
+    @include portrait() {
+      padding: 0 0 1.8rem;
+      flex-wrap: nowrap;
+      justify-content: center;
+    }
+
+    @include landscape() {
+      padding: 0;
+    }
+  }
+
+  li {
+    padding: 0;
+    border: none;
+
+    &:not(:last-of-type) {
+      margin-right: 0.2rem;
+    }
+
+    &:first-of-type {
+      button {
+        border-radius: 0.5rem 0 0 0.5rem;
+      }
+    }
+
+    &:last-of-type {
+      align-items: flex-start;
+      width: 100%;
+
+      @media screen and (min-width: 580px) {/* stylelint-disable-line */
+        width: auto;
+      }
+    }
+
+    @include below-mobile() {
+      &:first-of-type,
+      &:nth-of-type(3) {
+        button {
+          border-radius: 0.5rem 0 0 0.5rem;
+        }
+      }
+
+      &:nth-of-type(2),
+      &:nth-of-type(4) {
+        button {
+          border-radius: 0 0.5rem 0.5rem 0;
+        }
+      }
+
+      &:last-of-type {
+        width: 100%;
+
+        button {
+          border-radius: 0.5rem;
+        }
+      }
+    }
+
+    @include below-portrait() {
+      margin-bottom: 0.2rem;
+    }
+
+    @include portrait() {
+      :global(.react-daterange-picker__calendar) {
+        position: absolute !important;
+        left: unset !important;
+        right: 0 !important;
+      }
+
+      fieldset > div {
+        position: absolute;
+        top: 100%;
+        right: 0;
+      }
+    }
+
+    @include landscape() {
+      &:last-of-type {
+        @include before();
+
+        &:before {
+          width: 36.4rem;
+          height: 1rem;
+          bottom: -1rem;
+          @include central-x();
+        }
+      }
+
+      fieldset > div {
+        margin-top: 0.8rem;
+      }
+
+      > button {
+        font-size: 1.2rem;
+        padding: 1rem 2.5rem;
+      }
+    }
+
+    @include below-desktop() {
+      :global(.react-daterange-picker__calendar) {
+        &:before {
+          height: 0rem;
+        }
+      }
+    }
+
+    @include desktop() {
+      fieldset > div {
+        right: calc(-50% - 1.2rem);
+        transform: translateX(50%);
+      }
+    }
+  }
+}
+
+.hover {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  fieldset > div {
+    transition: opacity 0.15s ease;
+    opacity: 0.001;
+    display: none;
+    pointer-events: none;
+    @include w-c-o();
+    margin-top: 0.2rem;
+
+    button:before {
+      width: 1rem;
+      height: 2rem;
+    }
+  }
+
+  > button {
+    border-radius: 0 0.5rem 0.5rem 0;
+
+    &:before {
+      content: none;
+    }
+  }
+}
+
+.enabled:hover {
+  overflow: visible;
+
+  fieldset > div {
+    display: block;
+    opacity: 0.999;
+    pointer-events: all;
+  }
+
+  :global(.react-daterange-picker__calendar) {
+    position: relative !important;
+    bottom: unset !important;
+    top: 0 !important;
+  }
+}
+
+.visible {
+  margin: auto;
+  display: none;
+
+  @include landscape() {
+    display: flex;
+  }
+
+  ul {
+    @include flex();
+    text-align: center;
+  }
+
+  h3 {
+    align-self: center;
+    margin-right: 2.6rem;
+  }
+}
+
+.label {
+  text-transform: unset;
+  font-weight: var(--semibold);
+
+  @include all() {
+    font-size: 1.2rem;
+    white-space: pre;
+  }
+}
+
+.expanded {
+  @include before();
+
+  &:before {
+    @include modal-default();
+  }
+
+  button svg {
+    transform: rotate(180deg);
+  }
+}
+
+.expand,
+.hidden {
+  @include landscape() {
+    display: none;
+  }
+}
+
+.expand {
+  display: block;
+  z-index: 5;
+  position: relative;
+  width: 100%;
+  @include flex();
+  justify-content: space-between;
+  padding: 1.8rem var(--gutter);
+
+  &:hover h3 {
+    @include link-underline-hover();
+  }
+
+  &:active h3 {
+    @include link-underline-active();
+  }
+
+  h3 {
+    color: var(--white);
+    @include link-underline('transparent', 'white', 'blue-light');
+  }
+
+  svg {
+    stroke: var(--white);
+    width: 1rem;
+    margin-left: 1rem;
+    transition: transform 0.3s ease-out;
+    @include w-c-t();
+  }
+
+  @include portrait() {
+    padding: 1.8rem 4rem;
+  }
+}
+
+.hidden {
+  top: 100%;
+  left: 0;
+  z-index: 3;
+}

@@ -1,0 +1,46 @@
+.item {
+  &:not(:first-of-type) {
+    margin-top: 3rem;
+  }
+
+  * {
+    display: block;
+  }
+
+  a {
+    display: inline;
+  }
+
+  h1 {
+    margin-top: 0;
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  h4,
+  pre {
+    &:not(:first-child) {
+      margin-top: 0.5rem;
+      color: var(--grey-dark);
+      text-transform: none;
+    }
+  }
+}
+
+.buttons {
+  background-color: var(--grey);
+  display: flex;
+  padding: 2rem;
+  margin-left: -2rem;
+  width: calc(100% + 4rem);
+
+  button:not(:first-child) {
+    margin-left: 3rem;
+  }
+}
+
+.admin {
+  background-color: var(--black);
+}

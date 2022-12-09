@@ -1,0 +1,76 @@
+picture {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+img,
+video {
+  width: 100%;
+  display: block;
+}
+
+figure {
+  position: relative;
+}
+
+.b-lazy {
+  filter: blur(0.5rem);
+  opacity: 0.25;
+  transition: filter 0.5s ease, transform 0.5s ease;
+  will-change: filter, transform;
+}
+
+.b-loaded {
+  filter: blur(0);
+  opacity: 0.999;
+}
+
+figure img,
+picture img,
+video {
+  height: 100%;
+  object-fit: cover;
+}
+
+svg,
+svg g {
+  fill: var(--transparent);
+}
+
+.icon {
+  &--facebook {
+    svg {
+      width: 1.4rem;
+    }
+  }
+
+  &--twitter {
+    svg {
+      width: 2.8rem;
+    }
+  }
+
+  &--linkedin,
+  &--instagram {
+    svg {
+      width: 2.6rem;
+    }
+  }
+
+  &-wrapper {
+    flex-shrink: 0;
+    width: 1.4rem;
+    height: 1.4rem;
+    margin-right: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}

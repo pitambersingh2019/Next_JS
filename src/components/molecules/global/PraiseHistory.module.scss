@@ -1,0 +1,67 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  > h2 {
+    margin-bottom: var(--margin);
+  }
+
+  > p {
+    width: 100%;
+  }
+}
+
+.pagination {
+  margin: -1rem var(--pagination) 0 var(--padding);
+}
+
+.slider {
+  @include slider();
+  overflow: hidden;
+}
+
+.slide {
+  width: 100%;
+}
+
+.badges {
+  width: 100%;
+  @include grid-even(2, 3rem);
+
+  @include portrait() {
+    @include grid-cols(3);
+  }
+
+  @include landscape() {
+    grid-gap: 4rem;
+  }
+
+  li {
+    @include col();
+    text-align: center;
+  }
+}
+
+.badge {
+  img {
+    height: 9rem;
+    width: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  small {
+    color: var(--grey-dark);
+
+    span {
+      display: block;
+    }
+  }
+}

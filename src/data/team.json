@@ -1,0 +1,25 @@
+{
+  "members": [
+    {"id":1170,"name":"Rowan Rowan","firstName":"Rob","initials":"RR","avatar":{"src":"http://admin.staging.prosperex.com.au/media/lempifs0/rowan_2_blue_small.jpg?anchor=center&mode=crop","alt":"Brooke Cagle Hrzuzox1e6w Unsplash"},"roles":["Employee","Manager"],"department":"Creative"},{"id":1169,"name":"Billy Test","firstName":"Rob","initials":"BT","avatar":{"src":"http://admin.staging.prosperex.com.au/media/pnrfhbc3/ayo-ogunseinde-6w4f62sn_yi-unsplash.jpg?anchor=center&mode=crop","alt":"1169"},"roles":["Employee","Manager"],"department":"Digital"},{"id":1238,"name":"Billy Watson","firstName":"Rob","initials":"BW","avatar":{"src":null,"alt":null},"roles":["Employee","Manager"],"department":"Digital"},{"id":1168,"name":"Brace Test","firstName":"Rob","initials":"BT","avatar":{"src":null,"alt":null},"roles":["Employee","Manager"],"department":"Freelance"},{"id":1214,"name":"Danielle Test","firstName":"Rob","initials":"DT","avatar":{"src":null,"alt":null},"roles":["Employee","Manager"],"department":"Creative"},{"id":1171,"name":"Sam Gooch","firstName":"Rob","initials":"SG","avatar":{"src":"http://admin.staging.prosperex.com.au/media/lczlaa5r/sam_2_blue.jpg?anchor=center&mode=crop","alt":"Ivana Cajina Dnl6zipht2s Unsplash"},"roles":["Employee"],"department":"Digital"},{"id":1215,"name":"Heather Test","firstName":"Rob","initials":"HT","avatar":{"src":"http://admin.staging.prosperex.com.au/media/2mqnrend/door.png?anchor=center&mode=crop","alt":"1215"},"roles":["Employee","Manager"],"department":"Management"},{"id":1196,"name":"Ben Hirst","firstName":"Rob","initials":"BH","avatar":{"src":null,"alt":null},"roles":["Employee","Manager"],"department":"Digital"},{"id":1234,"name":"Will Moorhouse","firstName":"Rob","initials":"WM","avatar":{"src":null,"alt":null},"roles":["Employee","Manager"],"department":""},{"id":1213,"name":"Oli Taylor","firstName":"Rob","initials":"OT","avatar":{"src":"http://admin.staging.prosperex.com.au/media/mnnfrjsg/oli_7_colour.jpg?anchor=center&mode=crop","alt":"1213"},"roles":["Employee","Manager"],"department":"Creative"},{"id":1216,"name":"Oliver Test","firstName":"Rob","initials":"OT","avatar":{"src":null,"alt":null},"roles":["Employee","Manager"],"department":"Management"},{"id":1239,"name":"Rob Dorsett","firstName":"Rob","initials":"RD","avatar":{"src":null,"alt":null},"roles":["Employee","Manager"],"department":"Digital"}
+  ],
+  "member": {
+    "user": {
+      "name": "Sam Wong",
+      "email": "sam.wong@companyname.com.au",
+      "roles": [
+        "Employee",
+        "Manager"
+      ],
+      "department": "Sales"
+    },
+    "roles": [
+      "Employee",
+      "Manager"
+    ],
+    "stats": {
+      "surveysCompleted": 5,
+      "praiseReceived": 8,
+      "praiseGiven": 15
+    }
+  }
+}

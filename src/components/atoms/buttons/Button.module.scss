@@ -1,0 +1,100 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/interaction';
+
+.root {
+  white-space: nowrap;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  @include active-scale();
+  padding: 1.5rem 3rem 1.4rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  will-change: background-color, color;
+  border-radius: 0.5rem;
+  z-index: 5;
+  font-weight: var(--semibold);
+  @include before();
+
+  &:before {
+    @include absolute-cover();
+    width: calc(100% - 0.4rem);
+    height: calc(100% - 0.4rem);
+    transform: none;
+    border-radius: 0.5rem;
+    border: solid 0.2rem var(--transparent);
+    transition: border-color 0.3s ease;
+    will-change: border-color;
+  }
+
+  &:not([disabled]):hover {
+    transition-duration: 0.15s, 0.15s;
+
+    &:before {
+      transition-duration: 0.15s;
+    }
+  }
+
+  @include landscape() {
+    padding: 1.8rem 3.5rem 1.7rem;
+  }
+}
+
+.primary {
+  background-color: var(--primary-button-hover);
+  color: var(--primary-button-colour);
+
+  &:not([disabled]):hover {
+    background-color: var(--transparent);
+    color: var(--primary-button-hover);
+
+    &:before {
+      border-color: var(--primary-button-hover);
+    }
+  }
+}
+
+.alt {
+  background-color: var(--white);
+  color: var(--blue);
+
+  &:before {
+    border-color: var(--white);
+  }
+
+  &:not([disabled]):hover {
+    background-color: var(--transparent);
+    color: var(--white);
+  }
+}
+
+.secondary {
+  color: var(--secondary-button-colour);
+
+  &:before {
+    border-color: var(--secondary-button-colour);
+  }
+
+  &:not([disabled]):hover {
+    background-color: var(--primary-button-hover);
+    color: var(--primary-button-colour);
+  }
+}
+
+.range {
+  font-size: 1.2rem;
+  border-radius: 0;
+  color: var(--daterange-button-colour);
+  background-color: var(--blue-dark);
+  padding: 1rem 2.5rem;
+
+  &:not([disabled]):hover {
+    background-color: var(--daterange-button-hover);
+    color: var(--primary-button-colour);
+  }
+}
+
+.active {
+  color: var(--primary-button-colour);
+  background-color: var(--white);
+}

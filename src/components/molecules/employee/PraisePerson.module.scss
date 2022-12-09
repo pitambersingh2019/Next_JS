@@ -1,0 +1,85 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/interaction';
+@import '_styles/mixins/animation';
+
+.root {
+  position: relative;
+  width: 8rem;
+  flex-shrink: 0;
+  margin: 0 3rem 4rem 0;
+}
+
+.expanded {
+  @include before();
+
+  &:before {
+    @include modal-default();
+  }
+}
+
+.avatar {
+  @include image-feedback();
+  height: 8rem;
+  overflow: hidden;
+  opacity: 0.999;
+  width: 100%;
+  border-radius: 50%;
+  position: relative;
+
+  img {
+    object-fit: cover;
+    @include absolute-cover();
+  }
+}
+
+.members {
+  z-index: 10;
+  position: absolute;
+  top: 9rem;
+  left: 0;
+  max-width: 30rem;
+  width: calc(100vw - 15.8rem);
+  border: 0.2rem solid var(--grey);
+  border-radius: 0.5rem;
+  background-color: var(--white);
+  pointer-events: none;
+  opacity: 0.001;
+  transition: opacity 0.2s ease;
+  @include w-c-o();
+  @include before();
+
+  &:before {
+    width: 1rem;
+    height: 1rem;
+    border-top: 0.2rem solid var(--grey);
+    border-left: 0.2rem solid var(--grey);
+    background-color: var(--white);
+    position: absolute;
+    top: -0.75rem;
+    left: 3rem;
+    transform: rotate(45deg);
+  }
+
+  ul {
+    max-height: 25rem;
+    overflow-y: auto;
+  }
+
+  li:nth-of-type(even) {
+    background-color: var(--stripe);
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 1.8rem;
+    @include text-hover-none();
+  }
+}
+
+.shown {
+  pointer-events: all;
+  opacity: 0.999;
+}

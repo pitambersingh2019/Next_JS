@@ -1,0 +1,47 @@
+a,
+button {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  position: relative;
+  @include before();
+  text-underline-offset: 0.2rem;
+
+  &:before {
+    width: 100%;
+    min-width: 4.4rem;
+    height: 4.4rem;
+    left: 0;
+    @include central();
+  }
+
+  &[disabled],
+  &.disabled {
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+}
+
+.text-link,
+.widget-link {
+  @include weight-medium();
+}
+
+.text-link {
+  color: var(--blue);
+  @include link-underline('blue', 'blue-light', 'black');
+}
+
+.widget-link {
+  @include link-underline('blue-light', 'blue', 'white');
+}
+
+.disabled--text {
+  color: var(--grey-dark);
+  @include link-underline-colours('transparent', 'transparent', 'transparent');
+}
+
+.disabled--block {
+  opacity: 0.5;
+}

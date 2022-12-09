@@ -1,0 +1,41 @@
+@import '_styles/mixins/animation';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/interaction';
+
+.root {
+  position: relative;
+  text-indent: -99999rem;
+  flex-shrink: 0;
+  width: 4.4rem;
+  height: 4.4rem;
+  @include active-scale(0.85);
+
+  svg {
+    position: absolute;
+    @include central();
+    width: 1rem;
+    stroke: var(--blue);
+    transition: stroke 0.2s ease;
+  }
+
+  &:hover svg {
+    stroke: var(--blue-light);
+  }
+
+  &[disabled] {
+    &:active {
+      transform: scale(1);
+    }
+
+    svg {
+      stroke: var(--grey);
+      opacity: 0.5;
+    }
+  }
+}
+
+.prev {
+  svg {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+}

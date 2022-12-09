@@ -1,0 +1,48 @@
+{
+	"social": {
+		"networks": [{
+			"id": "facebook",
+			"url": "https://facebook.com/#"
+		}, {
+			"id": "instagram",
+			"url": "https://instagram.com/#"
+		}, {
+			"id": "twitter",
+			"url": "https://twitter.com/#"
+		}],
+		"tags": {
+			"hash": "prosperex",
+			"at": "ProsperEX"
+		}
+	},
+	"nav": {
+		"header": [{
+			"text": "Contact Us",
+			"target": "#"
+		}, {
+			"text": "Log In",
+			"target": "#"
+		}, {
+			"text": "Home",
+			"target": "/"
+		}],
+		"footer": [{
+			"text": "Contact Us",
+			"target": "#"
+		}, {
+			"text": "Log In",
+			"target": "#"
+		}, {
+			"text": "Home",
+			"target": "/"
+		}]
+	},
+	"signupCta": {
+		"heading": "How to Sign Up",
+		"content": "<p>Get in touch for a no obligation demo of Prosper EX and see how to grow your employee engagement.</p>",
+		"button": {
+			"target": "/",
+			"text": "Get in touch for a demo"
+		}
+	}
+}

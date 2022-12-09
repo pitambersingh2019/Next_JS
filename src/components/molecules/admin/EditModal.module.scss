@@ -1,0 +1,9 @@
+@import '_styles/mixins/breakpoints';
+
+.root {
+  button[type="submit"] {
+    @include all() {
+      margin-top: var(--margin);
+    }
+  }
+}

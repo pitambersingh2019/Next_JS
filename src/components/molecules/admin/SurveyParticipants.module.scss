@@ -1,0 +1,26 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+
+.root {
+  section {
+    @include grid-even(2, var(--gap));
+
+    @include all() {
+      padding-right: calc(var(--padding) + var(--gutter) + 1rem);
+    }
+  }
+}
+
+.list {
+  ul {
+    margin-top: 3rem;
+  }
+
+  li:not(:first-of-type) {
+    margin-top: 1.5rem;
+  }
+}
+
+.checkboxes {
+  margin-top: 3rem;
+}

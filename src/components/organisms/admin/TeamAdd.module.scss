@@ -1,0 +1,46 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+
+.root {
+  article > div:nth-child(2) {
+    padding-top: 3rem;
+  }
+
+  form {
+    margin-top: 3rem;
+  }
+
+  fieldset > div {
+    justify-content: flex-start;
+
+    @include landscape() {
+      @include grid-cols(1);
+    }
+  }
+
+  button[type="submit"] {
+    @include landscape() {
+      margin-top: 5rem;
+    }
+  }
+}
+
+.file {
+  @include col();
+  align-items: flex-start;
+
+  input {
+    @include visually-hidden();
+  }
+}
+
+.selected {
+  @include flex();
+  padding: 0rem 0 2rem;
+
+  svg {
+    fill: var(--white);
+    width: 1.2rem;
+    margin-right: 1rem;
+  }
+}

@@ -1,0 +1,575 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--background-colour);
+  color: var(--text-colour);
+  transition: background-color 0.55s ease, color 0.55s ease;
+  @include pseudo();
+
+  &:before,
+  &:after {
+    width: 100vw;
+    height: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 25;
+    pointer-events: none;
+    @include w-c-o();
+    opacity: 0.001;
+    transition: opacity 0.5s ease;
+    @include pseudo();
+  }
+
+  &:before {
+    background: linear-gradient(90deg, var(--blue) 0%, var(--blue-light) 100%);
+  }
+
+  &:after {
+    background-color: var(--white);
+    animation: 'loading' 1.2s infinite cubic-bezier(0.83, 0, 0.17, 1);
+
+    @include rtl() {
+      animation-name: 'loading-rtl';
+    }
+  }
+
+  &.loading {
+    &:before,
+    &:after {
+      opacity: 0.999;
+    }
+  }
+}
+
+.block-scroll {
+  overflow: hidden;
+
+  main {
+    z-index: 20;
+  }
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+header,
+main,
+footer {
+  position: relative;
+}
+
+main {
+  min-height: 100vh;
+}
+
+.inner {
+  margin: 0 auto;
+  min-width: $min;
+  max-width: $max;
+  position: relative;
+  padding: 0 var(--gutter);
+}
+
+.section {
+  padding: 5rem 0;
+
+  @include portrait() {
+    padding: 7.5rem 0;
+  }
+
+  > div {
+    padding: 0 var(--gutter);
+
+    > h2 {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+  }
+}
+
+.background {
+  * {
+    color: var(--white);
+  }
+
+  path {
+    fill: var(--white);
+  }
+
+  a:hover {
+    path {
+      fill: var(--grey);
+    }
+  }
+}
+
+.swirl {
+  position: relative;
+  color: var(--white);
+  @include before();
+
+  &:before {
+    @include absolute-cover();
+    left: -20rem;
+    width: calc(100vw + 40rem);
+  }
+}
+
+.card {
+  padding: 3rem;
+  position: relative;
+  background-color: var(--card-colour);
+  @include shadow();
+  min-height: 15rem;
+
+  &:hover {
+    box-shadow: 0 0.6rem 0.9rem var(--shadow-colour);
+  }
+
+  @include portrait() {
+    padding: 4rem;
+    border-radius: 0.5rem;
+  }
+
+  @include landscape() {
+    padding: 4rem 5rem;
+  }
+
+  &--overview {
+    min-height: 30rem;
+  }
+
+  &--dashboard {
+    @include flex();
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    > header,
+    > div,
+    > section {
+      width: 100%;
+    }
+
+    > p {
+      padding: 0 var(--padding);
+    }
+  }
+
+  &--table {
+    @include all() {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    > h1,
+    > h2,
+    &__subheader {
+      margin-left: var(--padding);
+    }
+  }
+
+  &__tasks {
+    @include flex();
+
+    @include below-portrait() {
+      margin-top: 2rem;
+    }
+
+    a,
+    button {
+      &:not(:first-child) {
+        margin-left: 2rem;
+      }
+
+      @include portrait() {
+        margin-top: 0.2rem;
+      }
+    }
+  }
+
+  &__actions {
+    margin-top: auto;
+  }
+}
+
+.spinner {
+  position: relative;
+  @include after();
+
+  > * {
+    opacity: 0.999;
+    transition: opacity 0.2s ease;
+    @include w-c-o();
+  }
+
+  &:after {
+    width: 3.1rem;
+    height: 3.1rem;
+    @include central();
+    opacity: 0.001;
+    background: url('./../../../assets/icons/spinner.svg') center center no-repeat;
+    background-size: 100% auto;
+    @include w-c-o-t();
+  }
+
+  &--avatar {
+    &:after {
+      transition: opacity 0s ease 0.3s;
+    }
+
+    &:hover:after {
+      opacity: 0.001;
+      transition-delay: 0s;
+    }
+
+    > figure,
+    > img,
+    > div {
+      opacity: 0.999;
+      z-index: 5;
+    }
+  }
+}
+
+.spinning {
+  > * {
+    opacity: 0.001;
+  }
+
+  &:after {
+    animation: 'spin-central' 1.2s linear infinite;
+    opacity: 0.999;
+  }
+}
+
+.dashboard {
+  @include all() {
+    padding: 0;
+  }
+
+  @include desktop() {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__wrapper {
+    position: relative;
+    z-index: 10;
+
+    @include below-portrait() {
+      padding: var(--padding) 0;
+      overflow: hidden;
+    }
+
+    @include portrait() {
+      padding: var(--padding);
+    }
+
+    @include desktop() {
+      flex-grow: 1;
+    }
+  }
+
+  &-grid,
+  &-single {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  &-grid {
+    max-width: 133rem;
+    @include grid-even(1, var(--padding));
+    padding: 0;
+
+    @include landscape() {
+      @include grid-cols(2);
+    }
+  }
+
+  &-single {
+    max-width: 90rem;
+
+    &--wide {
+      max-width: 120rem;
+    }
+  }
+
+  &__info {
+    margin: 4rem 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include portrait() {
+      margin: 5rem 0;
+    }
+
+    li {
+      margin-right: 5rem;
+
+      h2 {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &.spinner:after {
+    pointer-events: none;
+    transform: translateX(-50%);
+    top: calc(50vh - 6rem);
+
+    @include portrait() {
+      top: calc(50vh - 7rem);
+    }
+
+    @include landscape() {
+      top: calc(50vh - 8rem);
+    }
+  }
+}
+
+.tab {
+  width: 100%;
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.padded {
+  padding: 0 var(--padding);
+  max-width: none;
+}
+
+.modal {
+  z-index: 20;
+  @include modal();
+  color: var(--text-colour);
+  --modal-max: 80rem;
+  --modal-gutter: var(--gutter);
+
+  @include landscape() {
+    --modal-gutter: var(--gutter-portrait);
+  }
+
+  &__inner {
+    position: absolute;
+    top: var(--modal-gutter);
+    @include central-x();
+    width: calc(100% - calc(var(--modal-gutter) * 2));
+    max-width: var(--modal-max);
+    padding: var(--modal-gutter) var(--modal-gutter) calc(var(--modal-gutter) * 2);
+    @include before();
+
+    &:before {
+      background-color: var(--card-colour);
+      @include absolute-cover();
+      height: calc(100% - var(--modal-gutter));
+
+      .admin & {
+        border-radius: 0.4rem;
+      }
+    }
+
+    > * {
+      position: relative;
+    }
+
+    > h2,
+    > p {
+      &:nth-child(2) {
+        padding-right: calc(var(--gap) * 2);
+      }
+    }
+
+    > h2 {
+      color: var(--title-colour);
+      margin-bottom: var(--margin);
+    }
+
+    button {
+      white-space: pre-wrap;
+
+      @include mobile() {
+        white-space: nowrap;
+      }
+    }
+  }
+
+  &__bg {
+    @include modal-default();
+    position: absolute;
+    top: calc(var(--modal-gutter) * -1);
+    left: calc(var(--modal-gutter) * -1);
+    width: 100vw;
+    height: calc(100% + var(--modal-gutter));
+    min-height: 100vh;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.9);
+    --modal-offset: calc(calc(calc(100vw - var(--modal-max)) / 2) * -1);
+
+    @media screen and (min-width: 920px) {
+      &:not(#placeholder) {
+        left: var(--modal-offset);
+      }
+    }
+
+    @include landscape() {
+      left: calc(var(--gutter) * -1);
+    }
+
+    @media screen and (min-width: 1040px) {
+      &:not(#placeholder) {
+        left: var(--modal-offset);
+      }
+    }
+  }
+
+  &__close {
+    width: 4.4rem;
+    height: 4.4rem;
+    position: absolute;
+    top: var(--modal-gutter);
+    right: var(--modal-gutter);
+    z-index: 5;
+    margin: -1rem -1.6rem 0 0;
+    @include active-scale(0.9);
+
+    svg {
+      width: 1rem;
+      stroke: var(--icon-colour);
+      position: absolute;
+      @include central();
+    }
+
+    &:hover svg {
+      stroke: var(--blue-light);
+    }
+  }
+
+  .actions {
+    a,
+    button {
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.banner {
+  background: var(--black);
+  position: fixed;
+  z-index: 20;
+  padding: 2rem;
+  border: 0.1rem solid var(--faint);
+  width: calc(100vw - 4rem);
+  min-width: 28rem;
+  max-width: 40.5rem;
+  opacity: 0.999;
+  transition: opacity 0.3s ease;
+  @include w-c-o();
+
+  &--hidden {
+    opacity: 0.001;
+    pointer-events: none;
+  }
+
+  strong {
+    a,
+    button {
+      margin-left: 1rem;
+      @include weight-regular();
+      @include text-hover-underline();
+    }
+  }
+}
+
+.general {
+  padding: 3.5rem 0 10rem;
+
+  @include portrait() {
+    padding: 3rem 0 12rem;
+  }
+
+  @include desktop() {
+    padding: 16.5rem 0 15rem;
+  }
+}
+
+.actions {
+  a,
+  button {
+    white-space: normal;
+    margin-right: var(--margin);
+
+    @include all() {
+      margin-top: var(--margin);
+    }
+  }
+}
+
+.statistics {
+  display: flex;
+
+  figure:not(:last-of-type) {
+    margin-right: 3rem;
+  }
+}
+
+.statistic {
+  max-width: 15rem;
+}
+
+.success {
+  padding: 15rem 5rem;
+  min-height: 50rem;
+  @include col();
+  justify-content: center;
+
+  h2 {
+    color: var(--blue);
+    text-align: center;
+
+    + p {
+      @include landscape() {
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  a {
+    margin-top: 8rem;
+  }
+
+  &--slimline {
+    min-height: 35rem;
+    padding: 8rem 5rem;
+
+    a {
+      margin-top: 5rem;
+    }
+  }
+
+  &__answers {
+    border-top: 0.1rem solid var(--grey-light);
+
+    > h3 {
+      margin: 5rem 5rem 0;
+      color: var(--blue);
+    }
+
+    article {
+      &:nth-of-type(even) {
+        background-color: var(--stripe);
+      }
+
+      &:last-of-type {
+        border-radius: 0 0 0.5rem 0.5rem;
+      }
+    }
+  }
+}

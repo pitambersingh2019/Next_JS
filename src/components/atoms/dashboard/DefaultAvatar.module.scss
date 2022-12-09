@@ -1,0 +1,17 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+
+.root {
+  @include absolute-cover();
+  background-color: var(--grey);
+}
+
+.initials {
+  position: absolute;
+  @include central();
+  color: var(--white);
+
+  @include all() {
+    font-size: 2.8rem;
+  }
+}

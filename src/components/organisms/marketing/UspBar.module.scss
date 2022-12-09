@@ -1,0 +1,35 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+
+.root {
+  position: relative;
+  @include before();
+
+  &:before {
+    @include absolute-cover();
+    background-color: var(--blue-light);
+    opacity: 0.06;
+  }
+
+  > div {
+    padding: var(--gutter);
+    @include col();
+    text-align: center;
+
+    @include portrait() {
+      padding: 4rem var(--gutter);
+    }
+
+    @include landscape() {
+      padding: 6rem var(--gutter);
+    }
+  }
+
+  p:first-child {
+    margin-top: 0;
+
+    @include landscape() {
+      margin-top: 0;
+    }
+  }
+}

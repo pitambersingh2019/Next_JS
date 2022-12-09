@@ -1,0 +1,81 @@
+@import '_styles/mixins/breakpoints';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/type';
+@import '_styles/mixins/interaction';
+
+.root {
+  position: relative;
+
+  h2 {
+    @include below-portrait() {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.header {
+  @include border-horizontal();
+  display: flex;
+}
+
+.dropdown {
+  padding: 2rem 0;
+  max-width: 30rem;
+
+  label > span:first-child {
+    @include visually-hidden();
+  }
+
+  @include portrait() {
+    display: none;
+  }
+}
+
+.filters {
+  @include flex();
+
+  small {
+    @include weight-semibold();
+  }
+
+  ul {
+    @include flex();
+  }
+
+  li {
+    margin-left: 4rem;
+  }
+
+  button {
+    line-height: 3rem;
+  }
+
+  @include below-portrait() {
+    display: none;
+  }
+}
+
+.assign,
+.filter {
+  @include weight-medium();
+  @include link-underline('transparent', 'blue-light', 'blue');
+}
+
+.assign,
+.filtered {
+  @include link-underline-colours('blue-light', 'blue', 'white');
+}
+
+.assign {
+  padding: 0.6rem 0 0.8rem;
+
+  @include below-portrait() {
+    margin-top: var(--margin);
+  }
+}
+
+.overview {
+  @include landscape() {
+    @include grid-even(2, 5rem);
+  }
+}

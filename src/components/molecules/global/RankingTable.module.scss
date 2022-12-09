@@ -1,0 +1,65 @@
+@import '_styles/mixins/type';
+@import '_styles/mixins/layouts';
+@import '_styles/mixins/interaction';
+@import '_styles/mixins/animation';
+
+.root {
+  @include border-vertical();
+  
+  th,
+  td {
+    white-space: unset;
+  }
+  
+  th {
+    width: 50%;
+    @include weight-semibold();
+  }
+  
+  tbody {
+    tr {
+      &:not(:first-of-type) td {
+        padding-top: 0;
+      }
+
+      &:nth-of-type(even) {
+        background-color: unset;
+      }
+    }
+  }
+}
+
+.change {
+  @include flex();
+
+  svg {
+    flex-shrink: 0;
+    width: 1.6rem;
+    margin-right: 1.5rem;
+  }
+}
+
+.improve svg {
+  fill: var(--green);
+}
+
+.decline svg {
+  fill: var(--red);
+  transform: rotate(180deg);
+}
+
+.button,
+.text {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.button {
+  @include text-hover-none();
+}
+
+.text {
+  display: block;
+}
